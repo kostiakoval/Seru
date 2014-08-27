@@ -13,6 +13,23 @@
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B59F936A19AE0EC700AA2ED3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B504DBFD19AC6CE7003C7C13;
+			remoteInfo = Sweet;
+		};
+		B59F936C19AE0EC700AA2ED3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B504DC0819AC6CE7003C7C13;
+			remoteInfo = SweetTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B59F933919AE0A1F00AA2ED3 /* Seru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F933D19AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -22,6 +39,7 @@
 		B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeruTests.swift; sourceTree = "<group>"; };
 		B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		B59F936019AE0B9A00AA2ED3 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = "../../../Projects/MyMovies/MyMoviews-Swift/DerivedData/MyMovies/Build/Products/Debug-iphoneos/Sweet.framework"; sourceTree = "<group>"; };
+		B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sweet.xcodeproj; path = ../Sweet/Sweet/Sweet.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +64,7 @@
 		B59F932F19AE0A1F00AA2ED3 = {
 			isa = PBXGroup;
 			children = (
+				B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */,
 				B59F933B19AE0A1F00AA2ED3 /* Source */,
 				B59F934519AE0A1F00AA2ED3 /* SeruTests */,
 				B59F936319AE0BBB00AA2ED3 /* Frameworks */,
@@ -103,6 +122,15 @@
 				B59F936019AE0B9A00AA2ED3 /* Sweet.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B59F936619AE0EC700AA2ED3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B59F936B19AE0EC700AA2ED3 /* Sweet.framework */,
+				B59F936D19AE0EC700AA2ED3 /* SweetTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +209,12 @@
 			mainGroup = B59F932F19AE0A1F00AA2ED3;
 			productRefGroup = B59F933A19AE0A1F00AA2ED3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B59F936619AE0EC700AA2ED3 /* Products */;
+					ProjectRef = B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B59F933819AE0A1F00AA2ED3 /* Seru */,
@@ -188,6 +222,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B59F936B19AE0EC700AA2ED3 /* Sweet.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sweet.framework;
+			remoteRef = B59F936A19AE0EC700AA2ED3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B59F936D19AE0EC700AA2ED3 /* SweetTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SweetTests.xctest;
+			remoteRef = B59F936C19AE0EC700AA2ED3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B59F933719AE0A1F00AA2ED3 /* Resources */ = {
@@ -401,6 +452,7 @@
 				B59F934E19AE0A1F00AA2ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B59F934F19AE0A1F00AA2ED3 /* Build configuration list for PBXNativeTarget "SeruTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +461,7 @@
 				B59F935119AE0A1F00AA2ED3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
