@@ -26,7 +26,7 @@ public class PersistenceLayer {
   }
 
   public convenience init(name : String) {
-    self.init(name : AppInfo.productName, errorHandler: ErrorHandler())
+    self.init(name : name, errorHandler: ErrorHandler())
   }
   public convenience init() {
     self.init(name : AppInfo.productName)
