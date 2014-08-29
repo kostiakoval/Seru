@@ -11,23 +11,22 @@ import CoreData
 
 public class FetchResultController {
 
-  public class func make(moc: NSManagedObjectContext, entityName: String) -> NSFetchedResultsController {
+  public class func make(moc: NSManagedObjectContext, entityName: String, sortKey: String) -> NSFetchedResultsController {
     let fetchRequest = NSFetchRequest()
     let entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: moc)
     fetchRequest.entity = entity
     
     // Set the batch size to a suitable number.
-    fetchRequest.fetchBatchSize = 20
+//    fetchRequest.fetchBatchSize = 20
     
-    // Edit the sort key as appropriate.
-    let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
+    let sortDescriptor = NSSortDescriptor(key: sortKey, ascending: false)
     let sortDescriptors = [sortDescriptor]
-    
+
     fetchRequest.sortDescriptors = [sortDescriptor]
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: "Master")
+    let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
 //    aFetchedResultsController.delegate = self
 //    _fetchedResultsController = aFetchedResultsController
     
@@ -45,7 +44,7 @@ public class FetchResultController {
   
   public class func fetch(fetchRC: NSFetchedResultsController, errorHandler: ErrorHandler) {
     var error: NSError? = nil
-    if fetchRC.performFetch(&error) {
+    if !fetchRC.performFetch(&error) {
       errorHandler.handle(error!)
     }
   }
