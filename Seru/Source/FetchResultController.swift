@@ -11,35 +11,20 @@ import CoreData
 
 public class FetchResultController {
 
-  public class func make(moc: NSManagedObjectContext, entityName: String, sortKey: String) -> NSFetchedResultsController {
+  public class func make(moc: NSManagedObjectContext, entityName: String, sortKey: String, ascending: Bool = false, fetchBatchSize: Int = 20) -> NSFetchedResultsController {
+
     let fetchRequest = NSFetchRequest()
     let entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: moc)
     fetchRequest.entity = entity
-    
-    // Set the batch size to a suitable number.
-//    fetchRequest.fetchBatchSize = 20
-    
-    let sortDescriptor = NSSortDescriptor(key: sortKey, ascending: false)
-    let sortDescriptors = [sortDescriptor]
-
-    fetchRequest.sortDescriptors = [sortDescriptor]
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-//    aFetchedResultsController.delegate = self
-//    _fetchedResultsController = aFetchedResultsController
-    
-//    var error: NSError? = nil
-//    if !_fetchedResultsController!.performFetch(&error) {
-//      // Replace this implementation with code to handle the error appropriately.
-//      // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//      //println("Unresolved error \(error), \(error.userInfo)")
-//      abort()
-//    }
-    
+    fetchRequest.fetchBatchSize = fetchBatchSize
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: ascending)]
+  
+    return make(moc, fetchRequest: fetchRequest)
+  }
+  
+  public class func make(moc: NSManagedObjectContext, fetchRequest: NSFetchRequest, sectionNameKeyPath: String! = nil, cacheName: String! = nil) -> NSFetchedResultsController {
+      let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
     return aFetchedResultsController
-
   }
   
   public class func fetch(fetchRC: NSFetchedResultsController, errorHandler: ErrorHandler) {
