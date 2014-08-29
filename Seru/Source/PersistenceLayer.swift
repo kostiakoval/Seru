@@ -13,7 +13,7 @@ import Sweet
 public class PersistenceLayer {
   
   private let coreDataName: String
-  private var errorHandler: ErrorHandler
+  public var errorHandler: ErrorHandler
 
   lazy var managedObjectModel: NSManagedObjectModel = Factory.defaultMOM(self.coreDataName)
   lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = Factory.storeCoordinator(self.coreDataName, mom: self.managedObjectModel, errorHandler: self.errorHandler)
