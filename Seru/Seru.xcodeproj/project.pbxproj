@@ -11,6 +11,8 @@
 		B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */; };
 		B59F935C19AE0AD200AA2ED3 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */; };
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
+		B5F5D41519B05A2600E7F3D5 /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */; };
+		B5F5D41919B05AA500E7F3D5 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		B59F936019AE0B9A00AA2ED3 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = "../../../Projects/MyMovies/MyMoviews-Swift/DerivedData/MyMovies/Build/Products/Debug-iphoneos/Sweet.framework"; sourceTree = "<group>"; };
 		B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sweet.xcodeproj; path = ../Sweet/Sweet/Sweet.xcodeproj; sourceTree = "<group>"; };
+		B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultController.swift; sourceTree = "<group>"; };
+		B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				B59F933E19AE0A1F00AA2ED3 /* Seru.h */,
 				B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */,
+				B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */,
+				B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */,
 				B59F933C19AE0A1F00AA2ED3 /* Supporting Files */,
 			);
 			path = Source;
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F935C19AE0AD200AA2ED3 /* PersistenceLayer.swift in Sources */,
+				B5F5D41519B05A2600E7F3D5 /* FetchResultController.swift in Sources */,
+				B5F5D41919B05AA500E7F3D5 /* ManagedObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

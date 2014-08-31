@@ -13,7 +13,7 @@ import Sweet
 public class PersistenceLayer {
   
   private let coreDataName: String
-  private var errorHandler: ErrorHandler
+  public var errorHandler: ErrorHandler
 
   lazy var managedObjectModel: NSManagedObjectModel = Factory.defaultMOM(self.coreDataName)
   lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = Factory.storeCoordinator(self.coreDataName, mom: self.managedObjectModel, errorHandler: self.errorHandler)
@@ -26,7 +26,7 @@ public class PersistenceLayer {
   }
 
   public convenience init(name : String) {
-    self.init(name : AppInfo.productName, errorHandler: ErrorHandler())
+    self.init(name : name, errorHandler: ErrorHandler())
   }
   public convenience init() {
     self.init(name : AppInfo.productName)
@@ -54,8 +54,11 @@ public class ErrorHandler {
 // MARK: - Actions
 extension PersistenceLayer {
 
+  public func persist(moc: NSManagedObjectContext) {
+    saveContext(moc)
+  }
   public func persist() {
-    saveContext(self.mainMOC)
+    persist(self.mainMOC)
   }
   
   public func saveContext(moc: NSManagedObjectContext) {
@@ -74,6 +77,7 @@ class Factory {
 
   class func defaultMOM(name: String) -> NSManagedObjectModel {
     let modelURL = NSBundle.mainBundle().URLForResource(name, withExtension: "momd")
+    assert(modelURL != nil, "model with name: \(name) not foun")
     return NSManagedObjectModel(contentsOfURL: modelURL)
   }
 
