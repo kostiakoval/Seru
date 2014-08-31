@@ -54,8 +54,11 @@ public class ErrorHandler {
 // MARK: - Actions
 extension PersistenceLayer {
 
+  public func persist(moc: NSManagedObjectContext) {
+    saveContext(moc)
+  }
   public func persist() {
-    saveContext(self.mainMOC)
+    persist(self.mainMOC)
   }
   
   public func saveContext(moc: NSManagedObjectContext) {
