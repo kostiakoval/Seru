@@ -72,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B53EA01019BDC5B900764FEB /* FetchResult TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */,
+				B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */,
+			);
+			name = "FetchResult TableView";
+			sourceTree = "<group>";
+		};
 		B552AE2619BD863B006D815A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +133,7 @@
 				B552AE2A19BD863B006D815A /* Fetch */,
 				B59F933E19AE0A1F00AA2ED3 /* Seru.h */,
 				B59F933C19AE0A1F00AA2ED3 /* Supporting Files */,
-				B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */,
-				B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */,
+				B53EA01019BDC5B900764FEB /* FetchResult TableView */,
 			);
 			path = Source;
 			sourceTree = "<group>";

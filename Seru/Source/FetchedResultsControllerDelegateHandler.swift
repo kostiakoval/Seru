@@ -37,17 +37,17 @@ public class FetchedResultsControllerDelegateHandler : NSFetchedResultsControlle
     }
   }
   
-  public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath) {
+  public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
     switch type {
     case .Insert:
-      tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+      tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
     case .Delete:
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+      tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
     case .Update:
-      configureCell(cell: tableView.cellForRowAtIndexPath(indexPath)!, atIndexPath: indexPath)
+      configureCell(cell: tableView.cellForRowAtIndexPath(indexPath!)!, atIndexPath: indexPath!)
     case .Move:
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-      tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+      tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+      tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
     default:
       return
     }

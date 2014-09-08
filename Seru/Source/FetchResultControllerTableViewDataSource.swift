@@ -14,13 +14,15 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
   
   private var fetchedResultsController: NSFetchedResultsController
   //public typealias cellConfigType = (UITableViewCell, NSManagedObject) -> ()
-  private var configureCell: (UITableViewCell, object: NSManagedObject)-> ()
+  private var configureCell: (UITableViewCell, object: NSManagedObject) -> ()
+  public var editable: Bool
 
   
-  public init(fetchedResultsController: NSFetchedResultsController, configureCell: (cell: UITableViewCell, object: NSManagedObject) -> ()) {
+  public init(fetchedResultsController: NSFetchedResultsController, editable: Bool = false, configureCell: (cell: UITableViewCell, object: NSManagedObject) -> ()) {
     self.fetchedResultsController = fetchedResultsController
     self.configureCell = configureCell
-    }
+    self.editable = editable
+  }
   
   //MARK: - Public Interface
   public func objectAtIndexPath(indexPath: NSIndexPath) -> NSManagedObject {
@@ -56,17 +58,17 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
 //  MARK: Editable
   public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     // Return false if you do not want the specified item to be editable.
-    return true
+    return editable
   }
   
-  /*public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+  public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
       
-      let context = persistenceController.mainMOC
-      context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
-      persistenceController.persist()
+//      let context = persistenceController.mainMOC
+//      context.deleteObject(self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+//      persistenceController.persist()
     }
-  }*/
+  }
 
 
 }
