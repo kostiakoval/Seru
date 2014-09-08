@@ -78,7 +78,7 @@ class Factory {
   class func defaultMOM(name: String) -> NSManagedObjectModel {
     let modelURL = NSBundle.mainBundle().URLForResource(name, withExtension: "momd")
     assert(modelURL != nil, "model with name: \(name) not foun")
-    return NSManagedObjectModel(contentsOfURL: modelURL)
+    return NSManagedObjectModel(contentsOfURL: modelURL!)
   }
 
   class func storeCoordinator(name:String, mom: NSManagedObjectModel, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {

@@ -27,7 +27,7 @@ extension NSManagedObject : ManagedObjectInfo{
 
   public class func entity(inContext moc: NSManagedObjectContext) -> NSEntityDescription {
     let name = entityName()
-    return NSEntityDescription.entityForName(name, inManagedObjectContext: moc)
+    return NSEntityDescription.entityForName(name, inManagedObjectContext: moc)!
   }
 
   public class func insert(inContext moc: NSManagedObjectContext) -> Self {
