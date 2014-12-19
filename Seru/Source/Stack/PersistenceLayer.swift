@@ -73,30 +73,35 @@ extension PersistenceLayer {
 //MARK: - Factory
 extension PersistenceLayer {
 
-class Factory {
-
-  class func defaultMOM(name: String) -> NSManagedObjectModel {
-    let modelURL = NSBundle.mainBundle().URLForResource(name, withExtension: "momd")
-    assert(modelURL != nil, "model with name: \(name) not foun")
-    return NSManagedObjectModel(contentsOfURL: modelURL!)
-  }
-
-  class func storeCoordinator(name:String, mom: NSManagedObjectModel, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
-
-    let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mom)
-    var error: NSError?
-    if coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: FileHelper.filePathURL("\(name).sqlite"), options: nil, error: &error) == nil {
-      errorHandler.handle(error!)
+  class Factory {
+    
+    class func defaultMOM(name: String) -> NSManagedObjectModel {
+      if let modelURL = NSBundle.mainBundle().URLForResource(name, withExtension: "momd") {
+        if let model = NSManagedObjectModel(contentsOfURL: modelURL) {
+          return model
+        }
+      }
+      assertionFailure("model with name: \(name).momd not foun")
     }
-    return coordinator
+    
+    class func storeCoordinator(name:String, mom: NSManagedObjectModel, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
+      
+      let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mom)
+      var error: NSError?
+      let url = NSURL(string:FileHelper.filePath("\(name).sqlite"))
+      if coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+        errorHandler.handle(error!)
+      }
+      return coordinator
+    }
+    
+    class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
+      let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+      
+      managedObjectContext.persistentStoreCoordinator = storeCoordinator
+      return managedObjectContext
+    }
   }
-
-  class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
-    let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-    managedObjectContext.persistentStoreCoordinator = storeCoordinator
-    return managedObjectContext
-  }
-}
 }
 
 extension ErrorHandler {
