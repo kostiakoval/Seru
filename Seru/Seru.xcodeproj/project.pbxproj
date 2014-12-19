@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B53E9FD319BD9B1700764FEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53E9FD219BD9B1700764FEB /* UIKit.framework */; };
+		B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */; };
+		B552AE2C19BD863B006D815A /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2719BD863B006D815A /* ManagedObject.swift */; };
+		B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2919BD863B006D815A /* PersistenceLayer.swift */; };
+		B552AE2E19BD863B006D815A /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2B19BD863B006D815A /* FetchResultController.swift */; };
+		B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */; };
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */; };
-		B59F935C19AE0AD200AA2ED3 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */; };
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
-		B5F5D41519B05A2600E7F3D5 /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */; };
-		B5F5D41919B05AA500E7F3D5 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +36,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B53E9FD219BD9B1700764FEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerDelegateHandler.swift; sourceTree = "<group>"; };
+		B552AE2719BD863B006D815A /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
+		B552AE2919BD863B006D815A /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
+		B552AE2B19BD863B006D815A /* FetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultController.swift; sourceTree = "<group>"; };
+		B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B59F933919AE0A1F00AA2ED3 /* Seru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F933D19AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F933E19AE0A1F00AA2ED3 /* Seru.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Seru.h; sourceTree = "<group>"; };
 		B59F934419AE0A1F00AA2ED3 /* SeruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F934719AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeruTests.swift; sourceTree = "<group>"; };
-		B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		B59F936019AE0B9A00AA2ED3 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = "../../../Projects/MyMovies/MyMoviews-Swift/DerivedData/MyMovies/Build/Products/Debug-iphoneos/Sweet.framework"; sourceTree = "<group>"; };
 		B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sweet.xcodeproj; path = ../Sweet/Sweet/Sweet.xcodeproj; sourceTree = "<group>"; };
-		B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultController.swift; sourceTree = "<group>"; };
-		B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53E9FD319BD9B1700764FEB /* UIKit.framework in Frameworks */,
 				B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +72,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B53EA01019BDC5B900764FEB /* FetchResult TableView */ = {
+			isa = PBXGroup;
+			children = (
+				B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */,
+				B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */,
+			);
+			name = "FetchResult TableView";
+			sourceTree = "<group>";
+		};
+		B552AE2619BD863B006D815A /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B552AE2719BD863B006D815A /* ManagedObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B552AE2819BD863B006D815A /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				B552AE2919BD863B006D815A /* PersistenceLayer.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		B552AE2A19BD863B006D815A /* Fetch */ = {
+			isa = PBXGroup;
+			children = (
+				B552AE2B19BD863B006D815A /* FetchResultController.swift */,
+			);
+			path = Fetch;
+			sourceTree = "<group>";
+		};
 		B59F932F19AE0A1F00AA2ED3 = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +128,12 @@
 		B59F933B19AE0A1F00AA2ED3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B552AE2619BD863B006D815A /* Objects */,
+				B552AE2819BD863B006D815A /* Stack */,
+				B552AE2A19BD863B006D815A /* Fetch */,
 				B59F933E19AE0A1F00AA2ED3 /* Seru.h */,
-				B59F935B19AE0AD200AA2ED3 /* PersistenceLayer.swift */,
-				B5F5D41419B05A2600E7F3D5 /* FetchResultController.swift */,
-				B5F5D41819B05AA500E7F3D5 /* ManagedObject.swift */,
 				B59F933C19AE0A1F00AA2ED3 /* Supporting Files */,
+				B53EA01019BDC5B900764FEB /* FetchResult TableView */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -125,6 +166,7 @@
 		B59F936319AE0BBB00AA2ED3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B53E9FD219BD9B1700764FEB /* UIKit.framework */,
 				B59F936019AE0B9A00AA2ED3 /* Sweet.framework */,
 			);
 			name = Frameworks;
@@ -268,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59F935C19AE0AD200AA2ED3 /* PersistenceLayer.swift in Sources */,
-				B5F5D41519B05A2600E7F3D5 /* FetchResultController.swift in Sources */,
-				B5F5D41919B05AA500E7F3D5 /* ManagedObject.swift in Sources */,
+				B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */,
+				B552AE2C19BD863B006D815A /* ManagedObject.swift in Sources */,
+				B552AE2E19BD863B006D815A /* FetchResultController.swift in Sources */,
+				B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */,
+				B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +428,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -405,6 +450,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

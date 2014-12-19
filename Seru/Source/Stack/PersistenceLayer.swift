@@ -97,6 +97,7 @@ extension PersistenceLayer {
     
     class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
       let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+      
       managedObjectContext.persistentStoreCoordinator = storeCoordinator
       return managedObjectContext
     }
