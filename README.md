@@ -1,7 +1,8 @@
 Seru (セル)
 =====
 
-[![Build Status](https://travis-ci.org/konstantinkoval/Seru.svg?branch=develop)](https://travis-ci.org/konstantinkoval/Seru)  
+[![Build Status](https://travis-ci.org/konstantinkoval/Seru.svg?branch=develop)](https://travis-ci.org/konstantinkoval/Seru) 
+[![Coverage Status](https://coveralls.io/repos/konstantinkoval/Seru/badge.png)](https://coveralls.io/r/konstantinkoval/Seru)
 
 ##Core Date Stack in Swift.
 Seru is a light library that is designed to remove boilerplate code and make work with CoreDate extremely easy.  
