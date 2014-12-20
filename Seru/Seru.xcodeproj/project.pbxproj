@@ -16,6 +16,9 @@
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */; };
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
+		B5FF7C991A461FCD0035411E /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2719BD863B006D815A /* ManagedObject.swift */; };
+		B5FF7C9A1A461FCD0035411E /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2919BD863B006D815A /* PersistenceLayer.swift */; };
+		B5FF7C9B1A461FCD0035411E /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2B19BD863B006D815A /* FetchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */,
+				B5FF7C9B1A461FCD0035411E /* FetchResultController.swift in Sources */,
+				B5FF7C991A461FCD0035411E /* ManagedObject.swift in Sources */,
+				B5FF7C9A1A461FCD0035411E /* PersistenceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

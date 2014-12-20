@@ -54,20 +54,22 @@ public class ErrorHandler {
 // MARK: - Actions
 extension PersistenceLayer {
 
-  public func persist(moc: NSManagedObjectContext) {
-    saveContext(moc)
-  }
-  public func persist() {
-    persist(self.mainMOC)
+  public func persist(moc: NSManagedObjectContext) -> Bool {
+    return saveContext(moc)
   }
   
-  public func saveContext(moc: NSManagedObjectContext) {
+  public func persist() -> Bool {
+    return persist(self.mainMOC)
+  }
+  
+  public func saveContext(moc: NSManagedObjectContext) -> Bool {
     var error: NSError?
     if moc.hasChanges && !moc.save(&error) {
       self.errorHandler.handle(error!)
+      return false
     }
+    return true
   }
-
 }
 
 //MARK: - Factory
@@ -88,7 +90,9 @@ extension PersistenceLayer {
       
       let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mom)
       var error: NSError?
-      let url = NSURL(string:FileHelper.filePath("\(name).sqlite"))
+      
+      let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
+      
       if coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
         errorHandler.handle(error!)
       }

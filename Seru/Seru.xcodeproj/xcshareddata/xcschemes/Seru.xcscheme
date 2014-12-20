@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B59F934319AE0A1F00AA2ED3"
+               BuildableName = "SeruTests.xctest"
+               BlueprintName = "SeruTests"
+               ReferencedContainer = "container:Seru.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B59F933819AE0A1F00AA2ED3"
+            BuildableName = "Seru.framework"
+            BlueprintName = "Seru"
+            ReferencedContainer = "container:Seru.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
