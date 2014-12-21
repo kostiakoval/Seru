@@ -10,26 +10,46 @@ import Foundation
 import CoreData
 import Sweet
 
+
+public enum StoreLocationType {
+  case PrivateFolder //Located in Documents directory. Visible only to the app
+  case SharedGroup // Located in shared Group directory and visible to all exntesion that have access to that group
+}
+
+public enum StoreType {
+  case SQLite
+  case Binary
+  case InMemory
+}
+
 public class PersistenceLayer {
   
   private let coreDataName: String
   public var errorHandler: ErrorHandler
 
-  lazy var managedObjectModel: NSManagedObjectModel = Factory.defaultMOM(self.coreDataName)
-  lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = Factory.storeCoordinator(self.coreDataName, mom: self.managedObjectModel, errorHandler: self.errorHandler)
-
-  public lazy var mainMOC: NSManagedObjectContext = Factory.mainMOC(self.persistentStoreCoordinator)
+  public var mainMOC: NSManagedObjectContext
+  var managedObjectModel: NSManagedObjectModel
+  var persistentStoreCoordinator: NSPersistentStoreCoordinator
   
-  public init(name: String, errorHandler: ErrorHandler) {
+  public init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler) {
     coreDataName = name
     self.errorHandler = errorHandler
+    
+    managedObjectModel = Factory.defaultMOM(coreDataName)
+    persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+    PersistenceLayer.setupCoordinator(persistentStoreCoordinator, name:name, type: type, location: location, errorHandler: errorHandler)
+    mainMOC = Factory.mainMOC(persistentStoreCoordinator)
   }
 
-  public convenience init(name : String) {
-    self.init(name : name, errorHandler: ErrorHandler())
+  public convenience init(name: String, fileLocation: String) {
+    self.init(name: name, errorHandler: ErrorHandler())
+  }
+  
+  public convenience init(name: String) {
+    self.init(name: name, errorHandler: ErrorHandler())
   }
   public convenience init() {
-    self.init(name : AppInfo.productName)
+    self.init(name: AppInfo.productName)
   }
 }
 
@@ -72,8 +92,50 @@ extension PersistenceLayer {
   }
 }
 
+
+// MARK:- Private
+
+private extension StoreType  {
+  var coreDataType: String {
+    switch self {
+    case .SQLite: return NSSQLiteStoreType
+    case .Binary: return NSBinaryStoreType
+    case .InMemory: return NSInMemoryStoreType
+    }
+  }
+}
+
 //MARK: - Factory
-extension PersistenceLayer {
+private extension PersistenceLayer {
+
+  typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
+
+  class func setupCoordinator(coordinator: NSPersistentStoreCoordinator, name:String, type: StoreType, location: StoreLocationType, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
+
+    func params() -> StoreParams? {
+      switch (type, location) {
+        case (.SQLite, .PrivateFolder):
+          let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
+          return (nil, url, nil)
+      case (_, .SharedGroup):
+        return nil
+      case (_, _):
+        return nil
+      }
+    }
+    
+    return storeConfigurator(coordinator)(type: .InMemory, params: params(), errorHandler: errorHandler)
+    
+  }
+  
+  final class func storeConfigurator(coordinator: NSPersistentStoreCoordinator)(type: StoreType, params: StoreParams?, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
+    var error: NSError?
+    if coordinator.addPersistentStoreWithType(type.coreDataType, configuration: params?.configuration, URL: params?.URL, options: params?.options, error: &error) == nil {
+      errorHandler.handle(error!)
+    }
+    return coordinator
+  }
+  
 
   class Factory {
     
@@ -86,25 +148,14 @@ extension PersistenceLayer {
       assertionFailure("model with name: \(name).momd not foun")
     }
     
-    class func storeCoordinator(name:String, mom: NSManagedObjectModel, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
-      
-      let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mom)
-      var error: NSError?
-      
-      let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
-      
-      if coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
-        errorHandler.handle(error!)
-      }
-      return coordinator
-    }
+// MARK:- NSManagedObjectContext
     
-    class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
+    final class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
       let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-      
       managedObjectContext.persistentStoreCoordinator = storeCoordinator
       return managedObjectContext
     }
+    
   }
 }
 
