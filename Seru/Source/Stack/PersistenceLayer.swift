@@ -13,7 +13,7 @@ import Sweet
 
 public enum StoreLocationType {
   case PrivateFolder //Located in Documents directory. Visible only to the app
-  case SharedGroup // Located in shared Group directory and visible to all exntesion that have access to that group
+  case SharedGroup(String) // Located in shared Group directory and visible to all exntesion that have access to that group
 }
 
 public enum StoreType {
@@ -37,12 +37,20 @@ public class PersistenceLayer {
     
     managedObjectModel = Factory.defaultMOM(coreDataName)
     persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    PersistenceLayer.setupCoordinator(persistentStoreCoordinator, name:name, type: type, location: location, errorHandler: errorHandler)
     mainMOC = Factory.mainMOC(persistentStoreCoordinator)
-  }
+    
+    switch location {
+    case let .SharedGroup(group):
+      sharedFilePath = FileHelper.sharedFilePath(group)
+    default:
+      break
+    }
 
-  public convenience init(name: String, fileLocation: String) {
-    self.init(name: name, errorHandler: ErrorHandler())
+    setupCoordinator(persistentStoreCoordinator, name: name, type: type, location: location, errorHandler: errorHandler)
+  }
+  
+  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
+    self.init(name: AppInfo.productName, type: type, location: location, errorHandler: ErrorHandler())
   }
   
   public convenience init(name: String) {
@@ -51,6 +59,10 @@ public class PersistenceLayer {
   public convenience init() {
     self.init(name: AppInfo.productName)
   }
+  
+//  MARK: - Private
+  let sharedFilePath: ((file: String) -> NSURL)?
+  
 }
 
 //MARK: - Error Handler
@@ -110,7 +122,8 @@ private extension PersistenceLayer {
 
   typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
 
-  class func setupCoordinator(coordinator: NSPersistentStoreCoordinator, name:String, type: StoreType, location: StoreLocationType, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
+  
+  func setupCoordinator(coordinator: NSPersistentStoreCoordinator, name:String, type: StoreType, location: StoreLocationType, errorHandler: ErrorHandler) -> NSPersistentStoreCoordinator {
 
     func params() -> StoreParams? {
       switch (type, location) {
@@ -118,13 +131,14 @@ private extension PersistenceLayer {
           let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
           return (nil, url, nil)
       case (_, .SharedGroup):
-        return nil
+        let url = sharedFilePath!(file: "\(name).sqlite")
+        return (nil, url, nil)
       case (_, _):
         return nil
       }
     }
     
-    return storeConfigurator(coordinator)(type: .InMemory, params: params(), errorHandler: errorHandler)
+    return PersistenceLayer.storeConfigurator(coordinator)(type: .InMemory, params: params(), errorHandler: errorHandler)
     
   }
   
