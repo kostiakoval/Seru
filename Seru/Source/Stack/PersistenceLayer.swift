@@ -49,14 +49,11 @@ public class PersistenceLayer {
     setupCoordinator(persistentStoreCoordinator, name: name, type: type, location: location, errorHandler: errorHandler)
   }
   
-  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
-    self.init(name: AppInfo.productName, type: type, location: location, errorHandler: ErrorHandler())
+  public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
+    self.init(name: name, type: type, location: location, errorHandler: ErrorHandler())
   }
   
-  public convenience init(name: String) {
-    self.init(name: name, errorHandler: ErrorHandler())
-  }
-  public convenience init() {
+  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
     self.init(name: AppInfo.productName)
   }
   
