@@ -15,7 +15,8 @@ class SeruStackTest: XCTestCase {
  
   override func setUp() {
     super.setUp()
-    stack = PersistenceLayer(name:"Seru")
+    let config = PersistanceConfigurator(name: "Seru")
+    stack = PersistenceLayer(configurator: config)
   }
   
   override func tearDown() {
@@ -29,7 +30,6 @@ class SeruStackTest: XCTestCase {
     XCTAssertNotNil(stack.mainMOC)
     XCTAssertNotNil(stack.managedObjectModel)
     XCTAssertNotNil(stack.persistentStoreCoordinator)
-    XCTAssertTrue(stack.sharedFilePath == nil)
   }
   
   func testDefaulModel() {

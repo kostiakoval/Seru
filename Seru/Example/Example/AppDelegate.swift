@@ -14,13 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
   var persistenceController =  PersistenceLayer()
-  var persistenceController1 =  PersistenceLayer(name: "Example")
-  var persistenceController2 =  PersistenceLayer(name: "Example", errorHandler:
-    
-    ErrorHandler(errorHandler: { error in
-    // custom error handling for all issue related with CoreData
-  })
-)
+//  var persistenceController1 =  PersistenceLayer(name: "Example")
+//  var persistenceController2 =  PersistenceLayer(name: "Example", errorHandler:
+//    
+//    ErrorHandler(errorHandler: { error in
+//    // custom error handling for all issue related with CoreData
+//  })
+//)
 
   func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
     // Override point for customization after application launch.
