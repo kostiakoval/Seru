@@ -20,24 +20,31 @@ public enum StoreType {
   case SQLite
   case Binary
   case InMemory
+  
+  var coreDataType: String {
+    switch self {
+    case .SQLite: return NSSQLiteStoreType
+    case .Binary: return NSBinaryStoreType
+    case .InMemory: return NSInMemoryStoreType
+    }
+  }
 }
 
 public class PersistenceLayer {
   
-  private let coreDataName: String
   public var errorHandler: ErrorHandler
 
   public var mainMOC: NSManagedObjectContext
   var managedObjectModel: NSManagedObjectModel
   var persistentStoreCoordinator: NSPersistentStoreCoordinator
   
-  public init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler) {
-    coreDataName = name
+  public init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler, factory: FactoryType = Factory()) {
+
     self.errorHandler = errorHandler
     
-    managedObjectModel = Factory.defaultMOM(coreDataName)
+    managedObjectModel = factory.defaultMOM(name)
     persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    mainMOC = Factory.mainMOC(persistentStoreCoordinator)
+    mainMOC = factory.mainMOC(persistentStoreCoordinator)
     
     switch location {
     case let .SharedGroup(group):
@@ -50,7 +57,7 @@ public class PersistenceLayer {
   }
   
   public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
-    self.init(name: name, type: type, location: location, errorHandler: ErrorHandler())
+    self.init(name: name, type: type, location: location, errorHandler: ErrorHandler(), factory: Factory())
   }
   
   public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder) {
@@ -101,20 +108,33 @@ extension PersistenceLayer {
   }
 }
 
+//MARK: - Factory
 
-// MARK:- Private
-
-private extension StoreType  {
-  var coreDataType: String {
-    switch self {
-    case .SQLite: return NSSQLiteStoreType
-    case .Binary: return NSBinaryStoreType
-    case .InMemory: return NSInMemoryStoreType
+public protocol FactoryType {
+  func defaultMOM(name: String) -> NSManagedObjectModel
+  func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext
+}
+  
+class Factory: FactoryType {
+  
+  func defaultMOM(name: String) -> NSManagedObjectModel {
+    if let model = NSManagedObjectModel.mergedModelFromBundles(nil) {
+      return model
     }
+    assertionFailure("model with name: \(name).momd not foun")
   }
+  
+  // MARK:- NSManagedObjectContext
+  
+  final func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
+    let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    managedObjectContext.persistentStoreCoordinator = storeCoordinator
+    return managedObjectContext
+  }
+  
 }
 
-//MARK: - Factory
+
 private extension PersistenceLayer {
 
   typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
@@ -135,7 +155,7 @@ private extension PersistenceLayer {
       }
     }
     
-    return PersistenceLayer.storeConfigurator(coordinator)(type: .InMemory, params: params(), errorHandler: errorHandler)
+    return PersistenceLayer.storeConfigurator(coordinator)(type: type, params: params(), errorHandler: errorHandler)
     
   }
   
@@ -145,28 +165,6 @@ private extension PersistenceLayer {
       errorHandler.handle(error!)
     }
     return coordinator
-  }
-  
-
-  class Factory {
-    
-    class func defaultMOM(name: String) -> NSManagedObjectModel {
-      if let modelURL = NSBundle.mainBundle().URLForResource(name, withExtension: "momd") {
-        if let model = NSManagedObjectModel(contentsOfURL: modelURL) {
-          return model
-        }
-      }
-      assertionFailure("model with name: \(name).momd not foun")
-    }
-    
-// MARK:- NSManagedObjectContext
-    
-    final class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
-      let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-      managedObjectContext.persistentStoreCoordinator = storeCoordinator
-      return managedObjectContext
-    }
-    
   }
 }
 

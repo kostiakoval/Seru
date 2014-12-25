@@ -13,9 +13,10 @@
 		B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2919BD863B006D815A /* PersistenceLayer.swift */; };
 		B552AE2E19BD863B006D815A /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2B19BD863B006D815A /* FetchResultController.swift */; };
 		B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */; };
+		B5945A051A4C06A20011CAC4 /* SeruStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */; };
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */; };
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
+		B5BB78751A4BFCE900941484 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */; };
 		B5FF7C991A461FCD0035411E /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2719BD863B006D815A /* ManagedObject.swift */; };
 		B5FF7C9A1A461FCD0035411E /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2919BD863B006D815A /* PersistenceLayer.swift */; };
 		B5FF7C9B1A461FCD0035411E /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2B19BD863B006D815A /* FetchResultController.swift */; };
@@ -50,9 +51,10 @@
 		B59F933E19AE0A1F00AA2ED3 /* Seru.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Seru.h; sourceTree = "<group>"; };
 		B59F934419AE0A1F00AA2ED3 /* SeruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F934719AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeruTests.swift; sourceTree = "<group>"; };
 		B59F936019AE0B9A00AA2ED3 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = "../../../Projects/MyMovies/MyMoviews-Swift/DerivedData/MyMovies/Build/Products/Debug-iphoneos/Sweet.framework"; sourceTree = "<group>"; };
 		B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sweet.xcodeproj; path = ../Sweet/Sweet/Sweet.xcodeproj; sourceTree = "<group>"; };
+		B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeruStackTest.swift; sourceTree = "<group>"; };
+		B5BB78741A4BFCE900941484 /* Seru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seru.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +154,9 @@
 		B59F934519AE0A1F00AA2ED3 /* SeruTests */ = {
 			isa = PBXGroup;
 			children = (
-				B59F934819AE0A1F00AA2ED3 /* SeruTests.swift */,
+				B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */,
 				B59F934619AE0A1F00AA2ED3 /* Supporting Files */,
+				B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */,
 			);
 			path = SeruTests;
 			sourceTree = "<group>";
@@ -325,9 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59F934919AE0A1F00AA2ED3 /* SeruTests.swift in Sources */,
 				B5FF7C9B1A461FCD0035411E /* FetchResultController.swift in Sources */,
 				B5FF7C991A461FCD0035411E /* ManagedObject.swift in Sources */,
+				B5945A051A4C06A20011CAC4 /* SeruStackTest.swift in Sources */,
+				B5BB78751A4BFCE900941484 /* Seru.xcdatamodeld in Sources */,
 				B5FF7C9A1A461FCD0035411E /* PersistenceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +528,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5BB78741A4BFCE900941484 /* Seru.xcdatamodel */,
+			);
+			currentVersion = B5BB78741A4BFCE900941484 /* Seru.xcdatamodel */;
+			path = Seru.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B59F933019AE0A1F00AA2ED3 /* Project object */;
 }
