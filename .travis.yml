@@ -8,4 +8,4 @@ before_install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild -project Seru/Seru.xcodeproj -scheme SeruTests build test | xcpretty -c; exit ${PIPESTATUS[0]}
+- xcodebuild -project Seru/Seru.xcodeproj -scheme Seru build test | xcpretty -c; exit ${PIPESTATUS[0]}
