@@ -38,8 +38,3 @@ private extension ErrorHandler {
     }
   }
 }
-
-public struct ABS {
-  var aaa = ErrorHandler()
-
-}

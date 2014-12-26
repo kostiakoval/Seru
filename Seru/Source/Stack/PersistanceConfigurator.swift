@@ -12,7 +12,7 @@ import Sweet
 
 public enum StoreLocationType {
   case PrivateFolder //Located in Documents directory. Visible only to the app
-  case SharedGroup(String)
+  case SharedGroup(name: String)
   // Located in shared Group directory and visible to all exntesion that have access to that group
 }
 
@@ -31,10 +31,11 @@ public enum StoreType {
 }
 
 typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
+typealias StoreCoordinatorSetup = (NSPersistentStoreCoordinator) -> NSPersistentStoreCoordinator
 
 protocol configurator {
   var modelProvider: () -> NSManagedObjectModel {get}
-  var setupStoreCoordinator: (NSPersistentStoreCoordinator) -> NSPersistentStoreCoordinator {set get }
+  var setupStoreCoordinator: StoreCoordinatorSetup  {get}
 }
 
 public struct PersistanceConfigurator : configurator {
@@ -44,7 +45,7 @@ public struct PersistanceConfigurator : configurator {
   let errorHandler = ErrorHandler()
   
   let modelProvider = ModelProcivder.mainBundleModel
-  var setupStoreCoordinator: (NSPersistentStoreCoordinator) -> NSPersistentStoreCoordinator
+  var setupStoreCoordinator: StoreCoordinatorSetup
 }
 
 extension PersistanceConfigurator {
@@ -54,19 +55,16 @@ extension PersistanceConfigurator {
   }
   
   init(name: String) {
-    self.name = name
-    let params = PersistanceConfigurator.storeParams(name, type: type, location: location)
-    setupStoreCoordinator = PersistanceConfigurator.addStoreCoordinator(type, params: params, errorHandler: errorHandler)
+    self.init(name: name, type: .SQLite)
   }
   
-  static func addStoreCoordinator(type: StoreType, params: StoreParams?, errorHandler: ErrorHandler)(coordinator: NSPersistentStoreCoordinator) -> NSPersistentStoreCoordinator {
-
-    var error: NSError?
-    if coordinator.addPersistentStoreWithType(type.coreDataType, configuration: params?.configuration, URL: params?.URL, options: params?.options, error: &error) == nil {
-      errorHandler.handle(error!)
-    }
-    return coordinator
+  init(name: String, type: StoreType) {
+    self.name = name
+    self.type = type
+    let params = PersistanceConfigurator.storeParams(name, type: type, location: location)
+    setupStoreCoordinator = StoreCoordinatorProvider.addStoreCoordinator(type, params: params, errorHandler: errorHandler)
   }
+  
   
   static func storeParams(name:String, type: StoreType, location: StoreLocationType) ->StoreParams? {
     
@@ -99,10 +97,14 @@ struct ModelProcivder {
 
 
 struct StoreCoordinatorProvider {
-  
-  static func addStoreCoordinator() {
-    
-  }
 
+  static func addStoreCoordinator(type: StoreType, params: StoreParams?, errorHandler: ErrorHandler)(coordinator: NSPersistentStoreCoordinator) -> NSPersistentStoreCoordinator {
+    
+    var error: NSError?
+    if coordinator.addPersistentStoreWithType(type.coreDataType, configuration: params?.configuration, URL: params?.URL, options: params?.options, error: &error) == nil {
+      errorHandler.handle(error!)
+    }
+    return coordinator
+  }
 }
 

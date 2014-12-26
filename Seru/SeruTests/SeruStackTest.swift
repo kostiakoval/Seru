@@ -15,8 +15,8 @@ class SeruStackTest: XCTestCase {
  
   override func setUp() {
     super.setUp()
-    let config = PersistanceConfigurator(name: "Seru")
-    stack = PersistenceLayer(configurator: config)
+//    let config = PersistanceConfigurator(name: "Seru")
+    stack = PersistenceLayer(name: "Seru")
   }
   
   override func tearDown() {
@@ -39,7 +39,7 @@ class SeruStackTest: XCTestCase {
     // XCTAssertEqual(entities.first!.name!, "Entity")
   }
   
-  func testContext() {
+  func testMainContext() {
     let moc = stack.mainMOC
     
     XCTAssertNotNil(moc.persistentStoreCoordinator)
@@ -47,6 +47,7 @@ class SeruStackTest: XCTestCase {
     XCTAssertNil(moc.parentContext)
     XCTAssertEqual(moc.concurrencyType, NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
     XCTAssertNil(moc.undoManager)
+    XCTAssertEqual(moc.name!, "main")
   }
   
   func testCoordinator() {

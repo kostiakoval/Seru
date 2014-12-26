@@ -28,10 +28,22 @@ public class PersistenceLayer {
     mainMOC = factory.mainMOC(persistentStoreCoordinator)
     configurator.setupStoreCoordinator(persistentStoreCoordinator)
   }
-  
+}
+
+//MARK:- Initializers
+extension PersistenceLayer {
   public convenience init() {
     self.init(configurator: PersistanceConfigurator())
   }
+  
+  public convenience init(name: String) {
+    self.init(configurator: PersistanceConfigurator(name: name))
+  }
+
+  public convenience init(name: String, type: StoreType) {
+    self.init(configurator: PersistanceConfigurator(name: name, type: type))
+  }
+
 }
 
 
