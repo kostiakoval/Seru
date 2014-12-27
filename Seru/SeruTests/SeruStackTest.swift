@@ -13,10 +13,15 @@ import XCTest
 class SeruStackTest: XCTestCase {
   var stack: PersistenceLayer!
  
+  let model : ModelProviderType = {
+    let bundle = NSBundle(forClass: PersistenceLayer.self)
+    return NSManagedObjectModel.mergedModelFromBundles([bundle])!
+  }
+  
   override func setUp() {
     super.setUp()
-//    let config = PersistanceConfigurator(name: "Seru")
-    stack = PersistenceLayer(name: "Seru")
+    var config = PersistanceConfigurator(name: "Seru", modelProvider: model)
+    stack = PersistenceLayer(configurator: config)
   }
   
   override func tearDown() {
@@ -24,6 +29,7 @@ class SeruStackTest: XCTestCase {
     super.tearDown()
   }
   
+//  MARK: -Default setup
   func testSetupTrack() {
     XCTAssertNotNil(stack)
     XCTAssertNotNil(stack.errorHandler)
@@ -35,8 +41,8 @@ class SeruStackTest: XCTestCase {
   func testDefaulModel() {
     let entities = stack.managedObjectModel.entities as [NSEntityDescription]
     
-    //XCTAssertEqual(entities.count, 1)
-    // XCTAssertEqual(entities.first!.name!, "Entity")
+    XCTAssertEqual(entities.count, 1)
+    XCTAssertEqual(entities.first!.name!, "Entity")
   }
   
   func testMainContext() {
@@ -67,5 +73,35 @@ class SeruStackTest: XCTestCase {
     XCTAssertFalse(store.readOnly)
     XCTAssertEqual(store.persistentStoreCoordinator!, coordinator)
   }
+
+//  MARK:- Store Types
+  func testInMemoryStack() {
+    
+    var config = PersistanceConfigurator(name: "Seru", type: .InMemory, modelProvider: model)
+    stack = PersistenceLayer(configurator: config)
+    checkStore(StoreType.InMemory, layer: stack)
+  }
+  
+  func testBinaryStack() {
+    
+    var config = PersistanceConfigurator(name: "Seru", type: .Binary, modelProvider: model)
+    stack = PersistenceLayer(configurator: config)
+    checkStore(StoreType.Binary, layer: stack)
+  }
+  
+  private func checkStore(expectedType: StoreType, layer: PersistenceLayer) {
+    let stores = layer.persistentStoreCoordinator.persistentStores as [NSPersistentStore]
+    XCTAssertEqual(stores.count, 1)
+    let store: NSPersistentStore = stores.first!
+    XCTAssertEqual(store.type, expectedType.coreDataType)
+  }
+  
+// MARK:- Store Locations
+  
+//  func testSharedGroupStore() {
+//    var config = PersistanceConfigurator(name: "Seru", location: StoreLocationType.SharedGroup("group.test.test"), modelProvider: model)
+//    stack = PersistenceLayer(configurator: config)
+//  }
+
   
 }

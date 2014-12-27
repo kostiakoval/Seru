@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50F05ED1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F05EC1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift */; };
 		B53E9FD319BD9B1700764FEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53E9FD219BD9B1700764FEB /* UIKit.framework */; };
 		B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */; };
 		B552AE2C19BD863B006D815A /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2719BD863B006D815A /* ManagedObject.swift */; };
@@ -18,7 +19,6 @@
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
 		B5ACDB0E1A4C4ADB00F0242C /* PersistanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5945A101A4C455B0011CAC4 /* PersistanceConfigurator.swift */; };
-		B5ACDB121A4C639B00F0242C /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACDB111A4C639B00F0242C /* test.swift */; };
 		B5ACDB141A4C644D00F0242C /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACDB131A4C644D00F0242C /* ErrorHandler.swift */; };
 		B5BB78751A4BFCE900941484 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */; };
 		B5DA71121A4C66F200115213 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACDB131A4C644D00F0242C /* ErrorHandler.swift */; };
@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50F05EC1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceConfiguratorTest.swift; sourceTree = "<group>"; };
 		B53E9FD219BD9B1700764FEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerDelegateHandler.swift; sourceTree = "<group>"; };
 		B552AE2719BD863B006D815A /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		B59F934719AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F936019AE0B9A00AA2ED3 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = "../../../Projects/MyMovies/MyMoviews-Swift/DerivedData/MyMovies/Build/Products/Debug-iphoneos/Sweet.framework"; sourceTree = "<group>"; };
 		B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sweet.xcodeproj; path = ../Sweet/Sweet/Sweet.xcodeproj; sourceTree = "<group>"; };
-		B5ACDB111A4C639B00F0242C /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = test.swift; path = Source/Stack/test.swift; sourceTree = "<group>"; };
 		B5ACDB131A4C644D00F0242C /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeruStackTest.swift; sourceTree = "<group>"; };
 		B5BB78741A4BFCE900941484 /* Seru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seru.xcdatamodel; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 		B59F932F19AE0A1F00AA2ED3 = {
 			isa = PBXGroup;
 			children = (
-				B5ACDB111A4C639B00F0242C /* test.swift */,
 				B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */,
 				B59F933B19AE0A1F00AA2ED3 /* Source */,
 				B59F934519AE0A1F00AA2ED3 /* SeruTests */,
@@ -166,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */,
+				B50F05EC1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift */,
 				B59F934619AE0A1F00AA2ED3 /* Supporting Files */,
-				B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */,
 			);
 			path = SeruTests;
 			sourceTree = "<group>";
@@ -175,6 +174,7 @@
 		B59F934619AE0A1F00AA2ED3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */,
 				B59F934719AE0A1F00AA2ED3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -334,7 +334,6 @@
 				B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */,
 				B5ACDB141A4C644D00F0242C /* ErrorHandler.swift in Sources */,
 				B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */,
-				B5ACDB121A4C639B00F0242C /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50F05ED1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift in Sources */,
 				B5FF7C9B1A461FCD0035411E /* FetchResultController.swift in Sources */,
 				B5DA71121A4C66F200115213 /* ErrorHandler.swift in Sources */,
 				B5FF7C991A461FCD0035411E /* ManagedObject.swift in Sources */,

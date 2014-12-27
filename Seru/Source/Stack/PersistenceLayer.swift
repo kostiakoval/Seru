@@ -14,7 +14,7 @@ import Sweet
 public class PersistenceLayer {
   
   public var errorHandler: ErrorHandler
-
+  
   public var mainMOC: NSManagedObjectContext
   var managedObjectModel: NSManagedObjectModel
   var persistentStoreCoordinator: NSPersistentStoreCoordinator
@@ -36,20 +36,15 @@ extension PersistenceLayer {
     self.init(configurator: PersistanceConfigurator())
   }
   
-  public convenience init(name: String) {
-    self.init(configurator: PersistanceConfigurator(name: name))
+  public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler()) {
+    self.init(configurator: PersistanceConfigurator(name: name, type: type, location: location, errorHandler: errorHandler))
   }
-
-  public convenience init(name: String, type: StoreType) {
-    self.init(configurator: PersistanceConfigurator(name: name, type: type))
-  }
-
 }
 
 
 // MARK: - Actions
 extension PersistenceLayer {
-
+  
   public func persist(moc: NSManagedObjectContext) -> Bool {
     return saveContext(moc)
   }
@@ -73,7 +68,7 @@ extension PersistenceLayer {
 public protocol FactoryType {
   func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext
 }
-  
+
 class Factory: FactoryType {
   
   final func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
