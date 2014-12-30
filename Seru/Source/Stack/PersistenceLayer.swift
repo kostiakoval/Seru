@@ -54,14 +54,54 @@ extension PersistenceLayer {
   }
   
   public func saveContext(moc: NSManagedObjectContext) -> Bool {
+    var result: Bool = true
     var error: NSError?
-    if moc.hasChanges && !moc.save(&error) {
-      self.errorHandler.handle(error!)
-      return false
+    moc.performBlock {
+      if moc.hasChanges && !moc.save(&error) {
+        result = false
+        self.errorHandler.handle(error!)
+      }
     }
-    return true
+    return result
+  }
+  
+  public func saveContextsChain(moc: NSManagedObjectContext) -> Bool {
+    saveContext(moc)
+    var result: Bool = true
+    var error: NSError?
+    moc.performBlock { [unowned self] in
+      if moc.hasChanges && !moc.save(&error) {
+        result = false
+        self.errorHandler.handle(error!)
+      } else {
+        if let parentMOC = moc.parentContext {
+          self.saveContextsChain(parentMOC)
+        }
+      }
+    }
+    return result
+  }
+
+  
+  public func performBackgroundSave(block :(context: NSManagedObjectContext) -> Void ) {
+   
+    let context = PersistenceLayer.backgroundContext(parent: mainMOC)
+    context.performBlock {
+     block(context: context)
+      self.saveContextsChain(context)
+    }
+  }
+  
+  //MARKL:- Context
+  public class func backgroundContext(parent: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
+    var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    context.name = "background"
+    context.parentContext = parent
+    return context
   }
 }
+
+
 
 //MARK: - Factory
 

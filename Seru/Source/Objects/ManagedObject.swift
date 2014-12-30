@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+/*
 public protocol ManagedObjectInfo {
   
   class func entityName () -> String
@@ -35,3 +35,4 @@ extension NSManagedObject : ManagedObjectInfo{
     return object
   }
 }
+*/

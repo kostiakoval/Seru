@@ -16,8 +16,8 @@
 		B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */; };
 		B5945A051A4C06A20011CAC4 /* SeruStackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB786F1A4BFC6300941484 /* SeruStackTest.swift */; };
 		B5945A111A4C455B0011CAC4 /* PersistanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5945A101A4C455B0011CAC4 /* PersistanceConfigurator.swift */; };
+		B59970501A52A5E9003DA934 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59F936B19AE0EC700AA2ED3 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F936019AE0B9A00AA2ED3 /* Sweet.framework */; };
 		B5ACDB0E1A4C4ADB00F0242C /* PersistanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5945A101A4C455B0011CAC4 /* PersistanceConfigurator.swift */; };
 		B5ACDB141A4C644D00F0242C /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACDB131A4C644D00F0242C /* ErrorHandler.swift */; };
 		B5BB78751A4BFCE900941484 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5BB78731A4BFCE900941484 /* Seru.xcdatamodeld */; };
@@ -28,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B599704B1A52A5D2003DA934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B504DBFC19AC6CE7003C7C13;
+			remoteInfo = Sweet;
+		};
 		B59F936A19AE0EC700AA2ED3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B59F936519AE0EC700AA2ED3 /* Sweet.xcodeproj */;
@@ -43,6 +50,19 @@
 			remoteInfo = SweetTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B599704F1A52A5D7003DA934 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B59970501A52A5E9003DA934 /* Sweet.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B50F05EC1A4D9ECB009D59CE /* PersistanceConfiguratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceConfiguratorTest.swift; sourceTree = "<group>"; };
@@ -71,7 +91,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53E9FD319BD9B1700764FEB /* UIKit.framework in Frameworks */,
-				B59F936119AE0B9A00AA2ED3 /* Sweet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,10 +239,12 @@
 				B59F933519AE0A1F00AA2ED3 /* Frameworks */,
 				B59F933619AE0A1F00AA2ED3 /* Headers */,
 				B59F933719AE0A1F00AA2ED3 /* Resources */,
+				B599704F1A52A5D7003DA934 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B599704C1A52A5D2003DA934 /* PBXTargetDependency */,
 			);
 			name = Seru;
 			productName = Seru;
@@ -353,6 +374,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B599704C1A52A5D2003DA934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sweet;
+			targetProxy = B599704B1A52A5D2003DA934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B59F934A19AE0A1F00AA2ED3 /* Debug */ = {
