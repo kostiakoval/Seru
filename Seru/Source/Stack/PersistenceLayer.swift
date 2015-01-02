@@ -43,52 +43,48 @@ extension PersistenceLayer {
 
 
 // MARK: - Actions
-extension PersistenceLayer {
+public extension PersistenceLayer {
   
-  public func persist(moc: NSManagedObjectContext) -> Bool {
-    return saveContext(moc)
+  //typealias ResultType = Bool -> Void
+  
+  public func persist(moc: NSManagedObjectContext) {
+    saveContext(moc)
   }
   
-  public func persist() -> Bool {
+  public func persist() {
     return persist(self.mainMOC)
   }
   
-  public func saveContext(moc: NSManagedObjectContext) -> Bool {
-    var result: Bool = true
-    var error: NSError?
+  public func saveContext(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
     moc.performBlock {
+      var error: NSError?
+      var result: Bool = true
       if moc.hasChanges && !moc.save(&error) {
-        result = false
         self.errorHandler.handle(error!)
+        result = false
       }
+      main_queue_call_if(completion, result)
     }
-    return result
   }
   
-  public func saveContextsChain(moc: NSManagedObjectContext) -> Bool {
-    saveContext(moc)
-    var result: Bool = true
-    var error: NSError?
-    moc.performBlock { [unowned self] in
-      if moc.hasChanges && !moc.save(&error) {
-        result = false
-        self.errorHandler.handle(error!)
+  public func saveContextsChain(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
+
+    saveContext(moc) { [unowned self] result in
+      if result && moc.parentContext != nil {
+        self.saveContextsChain(moc.parentContext!, completion: completion)
       } else {
-        if let parentMOC = moc.parentContext {
-          self.saveContextsChain(parentMOC)
-        }
+        call_if(completion, result)
       }
     }
-    return result
   }
 
   
-  public func performBackgroundSave(block :(context: NSManagedObjectContext) -> Void ) {
+  public func performBackgroundSave(block :(context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
    
     let context = PersistenceLayer.backgroundContext(parent: mainMOC)
     context.performBlock {
      block(context: context)
-      self.saveContextsChain(context)
+      self.saveContextsChain(context, completion: completion)
     }
   }
   
@@ -118,3 +114,28 @@ class Factory: FactoryType {
     return moc
   }
 }
+
+
+//MARK - Helpers
+func if_let<T>(a: T?, f: (T) -> Void) {
+  if let a = a {
+    f(a)
+  }
+}
+
+func call_if<P>(f: (P -> Void)?, param: P) {
+  if let f = f {
+     f(param)
+  }
+}
+
+func main_queue_call_if<P>(f: (P -> Void)?, param: P) {
+  if let f = f {
+    dispatch_async(dispatch_get_main_queue(), {
+      f(param)
+    })
+  }
+}
+
+
+
