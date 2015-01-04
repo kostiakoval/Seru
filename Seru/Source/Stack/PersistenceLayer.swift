@@ -31,9 +31,10 @@ public class PersistenceLayer {
 }
 
 //MARK:- Initializers
-extension PersistenceLayer {
-  public convenience init() {
-    self.init(configurator: PersistanceConfigurator())
+public extension PersistenceLayer {
+  
+  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler()) {
+    self.init(configurator: PersistanceConfigurator(type: type, location: location, errorHandler: errorHandler))
   }
   
   public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler()) {

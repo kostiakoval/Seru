@@ -12,15 +12,10 @@ import XCTest
 
 class SeruStackTest: XCTestCase {
   var stack: PersistenceLayer!
- 
-  let model : ModelProviderType = {
-    let bundle = NSBundle(forClass: PersistenceLayer.self)
-    return NSManagedObjectModel.mergedModelFromBundles([bundle])!
-  }
   
   override func setUp() {
     super.setUp()
-    var config = PersistanceConfigurator(name: "Seru", modelProvider: model)
+    var config = PersistanceConfigurator(name: "Seru", modelLocation:.AllMainBundles)
     stack = PersistenceLayer(configurator: config)
   }
   
@@ -66,7 +61,7 @@ class SeruStackTest: XCTestCase {
     XCTAssertEqual(stores.count, 1)
     
     let store: NSPersistentStore = stores.first!
-    XCTAssertNil(store.options)
+    XCTAssertNotNil(store.options)
     XCTAssertTrue(store.URL!.absoluteString!.hasSuffix("Documents/Seru.sqlite"))
     XCTAssertTrue(store.URL!.absoluteString!.hasPrefix("file:///"))
     XCTAssertEqual(store.type, StoreType.SQLite.coreDataType)
@@ -77,14 +72,14 @@ class SeruStackTest: XCTestCase {
 //  MARK:- Store Types
   func testInMemoryStack() {
     
-    var config = PersistanceConfigurator(name: "Seru", type: .InMemory, modelProvider: model)
+    var config = PersistanceConfigurator(name: "Seru", type: .InMemory, modelLocation: .AllMainBundles)
     stack = PersistenceLayer(configurator: config)
     checkStore(StoreType.InMemory, layer: stack)
   }
   
   func testBinaryStack() {
     
-    var config = PersistanceConfigurator(name: "Seru", type: .Binary, modelProvider: model)
+    var config = PersistanceConfigurator(name: "Seru", type: .Binary, modelLocation: .AllMainBundles)
     stack = PersistenceLayer(configurator: config)
     checkStore(StoreType.Binary, layer: stack)
   }

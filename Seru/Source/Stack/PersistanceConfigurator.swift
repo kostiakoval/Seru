@@ -31,24 +31,44 @@ public enum StoreType {
   
   var coreDataType: String {
     switch self {
-    case .SQLite: return NSSQLiteStoreType
-    case .Binary: return NSBinaryStoreType
-    case .InMemory: return NSInMemoryStoreType
+      case .SQLite: return NSSQLiteStoreType
+      case .Binary: return NSBinaryStoreType
+      case .InMemory: return NSInMemoryStoreType
+    }
+  }
+}
+
+public enum ModelLocation {
+  case MainBundle
+  case AllMainBundles
+  case FrameworksBundle
+  case ModelInBundle(NSBundle)
+  case ModelAtUrl(String)
+  case Custom(ModelProviderType)
+  
+  var modelProvider: ModelProviderType {
+    switch self {
+      case .MainBundle: return ModelProcivder.mainBundleModel
+      case .AllMainBundles: return ModelProcivder.allAppBundlesModel
+      case .FrameworksBundle: return ModelProcivder.allFrameworksBundlesModel
+      case .ModelInBundle(let bundle): return ModelProcivder.mainBundleModel
+      case .ModelAtUrl(let url): return ModelProcivder.mainBundleModel
+      case .Custom(let provider): return provider
     }
   }
 }
 
 typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
 typealias StoreCoordinatorSetup = (NSPersistentStoreCoordinator) -> NSPersistentStore?
-typealias ModelProviderType = () -> NSManagedObjectModel
+public typealias ModelProviderType = () -> NSManagedObjectModel
 
-protocol configurator {
+protocol Configurator {
   var modelProvider: ModelProviderType {get}
   var setupStoreCoordinator: StoreCoordinatorSetup  {get}
 }
 
-public struct PersistanceConfigurator : configurator {
-  let name: String
+public struct PersistanceConfigurator : Configurator {
+  
   let type: StoreType
   let location: StoreLocationType
   let errorHandler: ErrorHandler
@@ -61,12 +81,12 @@ extension PersistanceConfigurator {
   
   init(name: String = AppInfo.productName, type: StoreType = .SQLite,
     location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler(),
-    modelProvider: ModelProviderType = ModelProcivder.mainBundleModel) {
-    self.name = name
+    modelLocation: ModelLocation = ModelLocation.MainBundle) {
+
     self.type = type
     self.location = location
     self.errorHandler = errorHandler
-    self.modelProvider = modelProvider
+    self.modelProvider = modelLocation.modelProvider
     
     let params = PersistanceConfigurator.storeParams(name, type: type, location: location)
     self.setupStoreCoordinator = StoreCoordinatorProvider.addStoreCoordinator(type, params: params, errorHandler: errorHandler)
@@ -76,17 +96,22 @@ extension PersistanceConfigurator {
   static func storeParams(name:String, type: StoreType, location: StoreLocationType) ->StoreParams? {
     
     func params() -> StoreParams? {
+      let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption:true]
+
       switch (type, location) {
+        
       case (.Binary, .PrivateFolder):
         let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).data"))
-        return (nil, url, nil)
+        return (nil, url, options)
+      
       case (.SQLite, .PrivateFolder):
         let url = NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
-        return (nil, url, nil)
+        return (nil, url, options)
 
       case (_, .SharedGroup(let group)):
         let url = FileHelper.sharedFilePath(group)(file: "\(name).sqlite")
-        return (nil, url, nil)
+        return (nil, url, options)
+      
       case (_, _):
         return nil
       }
@@ -98,10 +123,22 @@ extension PersistanceConfigurator {
 struct ModelProcivder {
   
   static func mainBundleModel() -> NSManagedObjectModel {
-    if let m = NSManagedObjectModel.mergedModelFromBundles(nil) {
+    return modelForBundles(nil)
+  }
+  
+  static func allFrameworksBundlesModel() -> NSManagedObjectModel {
+    return modelForBundles(NSBundle.allFrameworks() as? [NSBundle])
+  }
+  
+  static func allAppBundlesModel() -> NSManagedObjectModel {
+    return modelForBundles(NSBundle.allBundles() as? [NSBundle])
+  }
+
+  private static func modelForBundles(bundles: [NSBundle]?) -> NSManagedObjectModel {
+    if let m = NSManagedObjectModel.mergedModelFromBundles(bundles) {
       return m
     }
-    assertionFailure("Cant get model form main bundle")
+    assertionFailure("Cant get model for bundles")
   }
 }
 
