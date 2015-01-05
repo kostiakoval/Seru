@@ -33,12 +33,12 @@ public class PersistenceLayer {
 //MARK:- Initializers
 public extension PersistenceLayer {
   
-  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler()) {
-    self.init(configurator: PersistanceConfigurator(type: type, location: location, errorHandler: errorHandler))
+  public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, modelLocation: ModelLocation = .MainBundle, errorHandler: ErrorHandler = ErrorHandler()) {
+    self.init(configurator: PersistanceConfigurator(type: type, location: location, modelLocation: modelLocation, errorHandler: errorHandler))
   }
   
-  public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler()) {
-    self.init(configurator: PersistanceConfigurator(name: name, type: type, location: location, errorHandler: errorHandler))
+  public convenience init(name: String, type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, modelLocation: ModelLocation = .MainBundle, errorHandler: ErrorHandler = ErrorHandler()) {
+    self.init(configurator: PersistanceConfigurator(name: name, type: type, location: location, modelLocation: modelLocation, errorHandler: errorHandler))
   }
 }
 

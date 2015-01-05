@@ -15,8 +15,7 @@ class SeruStackTest: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    var config = PersistanceConfigurator(name: "Seru", modelLocation:.AllMainBundles)
-    stack = PersistenceLayer(configurator: config)
+    stack = PersistenceLayer(name: "Seru", modelLocation:.AllMainBundles)
   }
   
   override func tearDown() {
