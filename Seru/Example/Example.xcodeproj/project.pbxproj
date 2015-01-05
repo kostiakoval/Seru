@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50F065C1A4EB40F009D59CE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F065A1A4EB40F009D59CE /* MasterViewController.swift */; };
 		B59F93AB19AE183A00AA2ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F93AA19AE183A00AA2ED3 /* AppDelegate.swift */; };
-		B59F93AD19AE183A00AA2ED3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F93AC19AE183A00AA2ED3 /* ViewController.swift */; };
 		B59F93B019AE183A00AA2ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59F93AE19AE183A00AA2ED3 /* Main.storyboard */; };
 		B59F93B219AE183A00AA2ED3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F93B119AE183A00AA2ED3 /* Images.xcassets */; };
 		B59F93D119AE195A00AA2ED3 /* Seru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59F93CE19AE194F00AA2ED3 /* Seru.framework */; };
@@ -33,10 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B50F065A1A4EB40F009D59CE /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B59F93A519AE183A00AA2ED3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F93A919AE183A00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F93AA19AE183A00AA2ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B59F93AC19AE183A00AA2ED3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B59F93AF19AE183A00AA2ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B59F93B119AE183A00AA2ED3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B59F93C719AE194F00AA2ED3 /* Seru.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Seru.xcodeproj; path = ../Seru.xcodeproj; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				B59F93AA19AE183A00AA2ED3 /* AppDelegate.swift */,
-				B59F93AC19AE183A00AA2ED3 /* ViewController.swift */,
+				B50F065A1A4EB40F009D59CE /* MasterViewController.swift */,
 				B59F93AE19AE183A00AA2ED3 /* Main.storyboard */,
 				B59F93B119AE183A00AA2ED3 /* Images.xcassets */,
 				B59F93A819AE183A00AA2ED3 /* Supporting Files */,
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59F93AD19AE183A00AA2ED3 /* ViewController.swift in Sources */,
+				B50F065C1A4EB40F009D59CE /* MasterViewController.swift in Sources */,
 				B59F93D419AE1A1D00AA2ED3 /* Example.xcdatamodeld in Sources */,
 				B59F93AB19AE183A00AA2ED3 /* AppDelegate.swift in Sources */,
 			);
