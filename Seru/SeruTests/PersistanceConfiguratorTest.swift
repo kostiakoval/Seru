@@ -25,7 +25,7 @@ class PersistanceConfiguratorTest: XCTestCase {
   func testConfigurator() {
 
     let config = PersistanceConfigurator(name: "MyTestName")
-    XCTAssertEqual(config.name, "MyTestName")
+
     XCTAssertEqual(config.type, StoreType.SQLite)
     XCTAssertEqual(config.location, StoreLocationType.PrivateFolder)
   }
@@ -41,7 +41,7 @@ class PersistanceConfiguratorTest: XCTestCase {
       let bundle = NSBundle(forClass: PersistenceLayer.self)
       return NSManagedObjectModel.mergedModelFromBundles([bundle])!
     }
-    let config = PersistanceConfigurator(name: "MyTestName", modelProvider:modelProvider)
+    let config = PersistanceConfigurator(name: "MyTestName", modelLocation:.Custom(modelProvider))
     
     let model = config.modelProvider()
     XCTAssertNotNil(model)
