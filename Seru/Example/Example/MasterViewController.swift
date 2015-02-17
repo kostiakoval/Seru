@@ -18,7 +18,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    
     self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
     let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
@@ -42,7 +41,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   
   func insertNewObject(sender: AnyObject) {
     
-    var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: stack.mainMOC) as NSManagedObject
+    var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: stack.mainMOC) as! NSManagedObject
     object.setValue(NSDate(), forKey: "time")
     stack.persist()
     updateTable()
@@ -55,7 +54,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     self.configureCell(cell, atIndexPath: indexPath)
     return cell
   }
