@@ -33,7 +33,7 @@ class SeruStackTest: XCTestCase {
   }
   
   func testDefaulModel() {
-    let entities = stack.managedObjectModel.entities as [NSEntityDescription]
+    let entities = stack.managedObjectModel.entities as! [NSEntityDescription]
     
     XCTAssertEqual(entities.count, 1)
     XCTAssertEqual(entities.first!.name!, "Entity")
@@ -56,7 +56,7 @@ class SeruStackTest: XCTestCase {
     XCTAssertNotNil(coordinator.managedObjectModel)
     XCTAssertNotNil(coordinator.persistentStores)
     
-    let stores = coordinator.persistentStores as [NSPersistentStore]
+    let stores = coordinator.persistentStores as! [NSPersistentStore]
     XCTAssertEqual(stores.count, 1)
     
     let store: NSPersistentStore = stores.first!
@@ -84,7 +84,7 @@ class SeruStackTest: XCTestCase {
   }
   
   private func checkStore(expectedType: StoreType, layer: PersistenceLayer) {
-    let stores = layer.persistentStoreCoordinator.persistentStores as [NSPersistentStore]
+    let stores = layer.persistentStoreCoordinator.persistentStores as! [NSPersistentStore]
     XCTAssertEqual(stores.count, 1)
     let store: NSPersistentStore = stores.first!
     XCTAssertEqual(store.type, expectedType.coreDataType)

@@ -26,7 +26,7 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
   
   //MARK: - Public Interface
   public func objectAtIndexPath(indexPath: NSIndexPath) -> NSManagedObject {
-    return fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+    return fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
   }
   
   public subscript (indexPath: NSIndexPath) -> NSManagedObject {
@@ -43,7 +43,7 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
   }
 
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     configureCell(cell, object: self[indexPath])
     return cell
   }
@@ -51,7 +51,7 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
 
 // MARK: optionals
   public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    let sectionsInfo = self.fetchedResultsController.sections as [NSFetchedResultsSectionInfo]
+    let sectionsInfo = self.fetchedResultsController.sections as! [NSFetchedResultsSectionInfo]
     return sectionsInfo.count
   }
 
@@ -76,6 +76,6 @@ public class FetchResultControllerTableViewDataSource : NSObject, UITableViewDat
 extension NSFetchedResultsController {
   
   var sectionsInfo: [NSFetchedResultsSectionInfo] {
-    return sections as [NSFetchedResultsSectionInfo]
+    return sections as! [NSFetchedResultsSectionInfo]
   }
 }
