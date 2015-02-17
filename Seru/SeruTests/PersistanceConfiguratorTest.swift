@@ -45,7 +45,7 @@ class PersistanceConfiguratorTest: XCTestCase {
     
     let model = config.modelProvider()
     XCTAssertNotNil(model)
-    let entities = model.entities as [NSEntityDescription]
+    let entities = model.entities as! [NSEntityDescription]
     
     XCTAssertEqual(entities.count, 1)
     XCTAssertEqual(entities.first!.name!, "Entity")
