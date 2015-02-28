@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import XCTest
+import Seru
 
 class SeruStackTest: XCTestCase {
   var stack: PersistenceLayer!

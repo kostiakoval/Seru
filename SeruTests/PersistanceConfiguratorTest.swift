@@ -9,6 +9,7 @@
 import Foundation
 import XCTest
 import CoreData
+import Seru
 
 class PersistanceConfiguratorTest: XCTestCase {
   
