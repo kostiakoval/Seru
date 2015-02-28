@@ -39,7 +39,7 @@ class PersistanceConfiguratorTest: XCTestCase {
   func testModelProvider() {
 
     let modelProvider : ModelProviderType = {
-      let bundle = NSBundle(forClass: PersistenceLayer.self)
+      let bundle = NSBundle(forClass: PersistenceStack.self)
       return NSManagedObjectModel.mergedModelFromBundles([bundle])!
     }
     let config = PersistanceConfigurator(name: "MyTestName", modelLocation:.Custom(modelProvider))

@@ -29,7 +29,7 @@ public enum StoreType {
   case Binary
   case InMemory
   
-  var coreDataType: String {
+  public var coreDataType: String {
     switch self {
       case .SQLite: return NSSQLiteStoreType
       case .Binary: return NSBinaryStoreType
@@ -58,8 +58,8 @@ public enum ModelLocation {
   }
 }
 
-typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
-typealias StoreCoordinatorSetup = (NSPersistentStoreCoordinator) -> NSPersistentStore?
+public typealias StoreParams = (configuration: String?, URL: NSURL?, options: [NSObject : AnyObject]?)
+public typealias StoreCoordinatorSetup = (NSPersistentStoreCoordinator) -> NSPersistentStore?
 public typealias ModelProviderType = () -> NSManagedObjectModel
 
 protocol Configurator {
@@ -69,15 +69,15 @@ protocol Configurator {
 
 public struct PersistanceConfigurator : Configurator {
   
-  let type: StoreType
-  let location: StoreLocationType
-  let errorHandler: ErrorHandler
+  public let type: StoreType
+  public let location: StoreLocationType
+  public let errorHandler: ErrorHandler
   
-  let modelProvider: ModelProviderType
-  let setupStoreCoordinator: StoreCoordinatorSetup
+  public let modelProvider: ModelProviderType
+  public let setupStoreCoordinator: StoreCoordinatorSetup
 }
 
-extension PersistanceConfigurator {
+public extension PersistanceConfigurator {
   
   init(name: String = AppInfo.productName, type: StoreType = .SQLite,
     location: StoreLocationType = .PrivateFolder, errorHandler: ErrorHandler = ErrorHandler(),

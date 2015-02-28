@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */; };
 		B552AE2C19BD863B006D815A /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2719BD863B006D815A /* ManagedObject.swift */; };
 		B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2919BD863B006D815A /* PersistenceLayer.swift */; };
 		B552AE2E19BD863B006D815A /* FetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE2B19BD863B006D815A /* FetchResultController.swift */; };
-		B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */; };
 		B5945A111A4C455B0011CAC4 /* PersistanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5945A101A4C455B0011CAC4 /* PersistanceConfigurator.swift */; };
 		B59F933F19AE0A1F00AA2ED3 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B59F933E19AE0A1F00AA2ED3 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5ACDB141A4C644D00F0242C /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ACDB131A4C644D00F0242C /* ErrorHandler.swift */; };
@@ -36,11 +34,9 @@
 
 /* Begin PBXFileReference section */
 		B53E9FD219BD9B1700764FEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerDelegateHandler.swift; sourceTree = "<group>"; };
 		B552AE2719BD863B006D815A /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		B552AE2919BD863B006D815A /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		B552AE2B19BD863B006D815A /* FetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultController.swift; sourceTree = "<group>"; };
-		B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchResultControllerTableViewDataSource.swift; sourceTree = "<group>"; };
 		B5945A101A4C455B0011CAC4 /* PersistanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceConfigurator.swift; sourceTree = "<group>"; };
 		B59F933919AE0A1F00AA2ED3 /* Seru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F933D19AE0A1F00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,15 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B53EA01019BDC5B900764FEB /* FetchResult TableView */ = {
-			isa = PBXGroup;
-			children = (
-				B552AE3319BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift */,
-				B53E9FDE19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift */,
-			);
-			name = "FetchResult TableView";
-			sourceTree = "<group>";
-		};
 		B552AE2619BD863B006D815A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +127,6 @@
 				B552AE2819BD863B006D815A /* Stack */,
 				B552AE2A19BD863B006D815A /* Fetch */,
 				B59F933C19AE0A1F00AA2ED3 /* Supporting Files */,
-				B53EA01019BDC5B900764FEB /* FetchResult TableView */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -308,13 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B552AE3419BD8EBE006D815A /* FetchResultControllerTableViewDataSource.swift in Sources */,
 				B552AE2C19BD863B006D815A /* ManagedObject.swift in Sources */,
 				B5945A111A4C455B0011CAC4 /* PersistanceConfigurator.swift in Sources */,
 				B552AE2E19BD863B006D815A /* FetchResultController.swift in Sources */,
 				B552AE2D19BD863B006D815A /* PersistenceLayer.swift in Sources */,
 				B5ACDB141A4C644D00F0242C /* ErrorHandler.swift in Sources */,
-				B53E9FDF19BDB3BD00764FEB /* FetchedResultsControllerDelegateHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

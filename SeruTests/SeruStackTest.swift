@@ -12,11 +12,11 @@ import XCTest
 import Seru
 
 class SeruStackTest: XCTestCase {
-  var stack: PersistenceLayer!
+  var stack: PersistenceStack!
   
   override func setUp() {
     super.setUp()
-    stack = PersistenceLayer(name: "Seru", modelLocation:.AllMainBundles)
+    stack = PersistenceStack(name: "Seru", modelLocation:.AllMainBundles)
   }
   
   override func tearDown() {
@@ -73,18 +73,18 @@ class SeruStackTest: XCTestCase {
   func testInMemoryStack() {
     
     var config = PersistanceConfigurator(name: "Seru", type: .InMemory, modelLocation: .AllMainBundles)
-    stack = PersistenceLayer(configurator: config)
+    stack = PersistenceStack(configurator: config)
     checkStore(StoreType.InMemory, layer: stack)
   }
   
   func testBinaryStack() {
     
     var config = PersistanceConfigurator(name: "Seru", type: .Binary, modelLocation: .AllMainBundles)
-    stack = PersistenceLayer(configurator: config)
+    stack = PersistenceStack(configurator: config)
     checkStore(StoreType.Binary, layer: stack)
   }
   
-  private func checkStore(expectedType: StoreType, layer: PersistenceLayer) {
+  private func checkStore(expectedType: StoreType, layer: PersistenceStack) {
     let stores = layer.persistentStoreCoordinator.persistentStores as! [NSPersistentStore]
     XCTAssertEqual(stores.count, 1)
     let store: NSPersistentStore = stores.first!

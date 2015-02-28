@@ -11,13 +11,13 @@ import CoreData
 import Sweet
 
 
-public class PersistenceLayer {
+public class PersistenceStack {
   
   public var errorHandler: ErrorHandler
   
   public var mainMOC: NSManagedObjectContext
-  var managedObjectModel: NSManagedObjectModel
-  var persistentStoreCoordinator: NSPersistentStoreCoordinator
+  public var managedObjectModel: NSManagedObjectModel
+  public var persistentStoreCoordinator: NSPersistentStoreCoordinator
   
   public init(configurator: PersistanceConfigurator, factory: FactoryType = Factory()) {
     
@@ -31,7 +31,7 @@ public class PersistenceLayer {
 }
 
 //MARK:- Initializers
-public extension PersistenceLayer {
+public extension PersistenceStack {
   
   public convenience init(type: StoreType = .SQLite, location: StoreLocationType = .PrivateFolder, modelLocation: ModelLocation = .MainBundle, errorHandler: ErrorHandler = ErrorHandler()) {
     self.init(configurator: PersistanceConfigurator(type: type, location: location, modelLocation: modelLocation, errorHandler: errorHandler))
@@ -44,10 +44,8 @@ public extension PersistenceLayer {
 
 
 // MARK: - Actions
-public extension PersistenceLayer {
-  
-  //typealias ResultType = Bool -> Void
-  
+public extension PersistenceStack {
+    
   public func persist(moc: NSManagedObjectContext) {
     saveContext(moc)
   }
@@ -82,7 +80,7 @@ public extension PersistenceLayer {
   
   public func performBackgroundSave(block :(context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
    
-    let context = PersistenceLayer.backgroundContext(parent: mainMOC)
+    let context = PersistenceStack.backgroundContext(parent: mainMOC)
     context.performBlock {
      block(context: context)
       self.saveContextsChain(context, completion: completion)
