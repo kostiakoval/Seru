@@ -17,7 +17,7 @@ class BaseStackTest: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    stack = BaseStack(bundle: NSBundle(forClass: self.dynamicType))
+    stack = BaseStack(name: "Seru", bundle: NSBundle(forClass: BaseStackTest.self))
   }
   
   override func tearDown() {

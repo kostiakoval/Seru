@@ -10,33 +10,8 @@ import Foundation
 import CoreData
 import Sweet
 
-public enum StoreLocationType : Equatable {
-  case PrivateFolder //Located in Documents directory. Visible only to the app
-  case SharedGroup(String)
-  // Located in shared Group directory and visible to all exntesion that have access to that group
-}
 
-public  func == (lhs:StoreLocationType, rhs:StoreLocationType) -> Bool {
-  switch (lhs, rhs) {
-    case (.PrivateFolder, .PrivateFolder): return true
-    case (.SharedGroup, .SharedGroup): return true
-    case (_, _): return false
-  }
-}
 
-public enum StoreType {
-  case SQLite
-  case Binary
-  case InMemory
-  
-  public var coreDataType: String {
-    switch self {
-      case .SQLite: return NSSQLiteStoreType
-      case .Binary: return NSBinaryStoreType
-      case .InMemory: return NSInMemoryStoreType
-    }
-  }
-}
 
 public enum ModelLocation {
   case MainBundle

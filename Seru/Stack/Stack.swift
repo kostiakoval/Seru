@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Sweet
 
 protocol Stack {
   
@@ -24,26 +25,28 @@ public class BaseStack: Stack {
   public var model: NSManagedObjectModel
   var coordinator: NSPersistentStoreCoordinator
   
-  /*init(moc: NSManagedObjectContext, model: NSManagedObjectModel, coordinator: NSPersistentStoreCoordinator, errorHandler: ErrorHandling) {
-    self.mainMOC = moc
-    self.model = model
-    self.coordinator = coordinator
-    self.errorHandler = errorHandler
-  }*/
-  
-  public init(bundle: NSBundle) {
+  public init(name:String = AppInfo.productName,
+    bundle: NSBundle = NSBundle.mainBundle(),
+    type: StoreType = .SQLite) {
+      
     errorHandler = ErrorHandler()
     model = modelInBundle(bundle)
-    
     coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
+    
     //setupCoordinator
-    mainMOC = BaseStack.mainMOC(coordinator);
+    let url = NSURL.fileURLWithPath(FileHelper.filePath(name))
+    BaseStack.setupStore(coordinator, type: type, configuration: nil, URL: url)
 
+    mainMOC = BaseStack.mainMOC(coordinator)
+  }
+  
+  /*public convenience init(bundle: NSBundle) {
+    self.init(name: AppInfo.productName, bundle: NSBundle.mainBundle())
   }
   
   public convenience init() {
-    self.init(bundle: NSBundle.mainBundle())
-  }
+    self.init(name: , bundle: )
+  }*/
 
   
 //MARK: - Internal 
@@ -54,7 +57,14 @@ public class BaseStack: Stack {
     moc.name = "main"
     return moc
   }
-
+  
+  static func setupStore(coordinator: NSPersistentStoreCoordinator, type:StoreType, configuration: String?, URL: NSURL?) -> NSError? {
+    
+    let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption:true]
+    var error: NSError?
+    coordinator.addPersistentStoreWithType(type.coreDataType, configuration: configuration, URL: URL, options: options, error: &error)
+    return error
+  }
 }
 
 public class SimpleStack: BaseStack {

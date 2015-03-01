@@ -22,7 +22,40 @@ private func modelForBundles(bundles: [NSBundle]?) -> NSManagedObjectModel {
   assertionFailure("Cant get model for bundles")
 }
 
-//MARK: - Not used 
+
+//MARK: Store Coordinator
+
+public enum StoreType {
+  case SQLite
+  case Binary
+  case InMemory
+  
+  public var coreDataType: String {
+    switch self {
+    case .SQLite: return NSSQLiteStoreType
+    case .Binary: return NSBinaryStoreType
+    case .InMemory: return NSInMemoryStoreType
+    }
+  }
+}
+
+public enum StoreLocationType : Equatable {
+  //Located in Documents directory. Visible only to the app
+  case PrivateFolder
+  // Located in shared Group directory and visible to all exntesion that have access to that group
+  case SharedGroup(String)
+}
+
+public  func == (lhs:StoreLocationType, rhs:StoreLocationType) -> Bool {
+  switch (lhs, rhs) {
+  case (.PrivateFolder, .PrivateFolder): return true
+  case (.SharedGroup, .SharedGroup): return true
+  case (_, _): return false
+  }
+}
+
+
+//MARK: - Not used
 
 func mainBundleModel() -> NSManagedObjectModel {
   return modelForBundles(nil)
