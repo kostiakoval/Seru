@@ -9,15 +9,27 @@
 import Foundation
 import CoreData
 
-protocol PersistAtions {
-  
+protocol PersistenceAtions {
+
+  var errorHandler: ErrorHandling {get}
   func persist(moc: NSManagedObjectContext)
   
 }
 
-public class Actions {
+public class PersistenceStack {
+  let stack: CoreDataStack
+  let errorHandler: ErrorHandling
+
+  init (stack: CoreDataStack) {
+    self.stack = stack
+    errorHandler = ErrorHandler()
+  }
   
-  /* public func persist(moc: NSManagedObjectContext) {
+  public func persist() {
+    return persist(stack.mainMOC)
+  }
+
+  public func persist(moc: NSManagedObjectContext) {
     saveContext(moc)
   }
   
@@ -35,13 +47,6 @@ public class Actions {
     }
   }
   
-  
-  public func persist() {
-    return persist(self.mainMOC)
-  }
-  
-  
-  
   public func saveContextsChain(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
     
     saveContext(moc) { [unowned self] result in
@@ -53,10 +58,9 @@ public class Actions {
     }
   }
   
-  
-  public func performBackgroundSave(block :(context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
+  public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
     
-    let context = PersistenceStack.backgroundContext(parent: mainMOC)
+    let context = PersistenceStack.backgroundContext(parent: stack.mainMOC)
     context.performBlock {
       block(context: context)
       self.saveContextsChain(context, completion: completion)
@@ -66,10 +70,10 @@ public class Actions {
   //MARKL:- Context
   public class func backgroundContext(parent: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
     var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-    context.name = "background"
+    context.name = "Background"
     context.parentContext = parent
     return context
-  }*/
+  }
 }
 
 //MARK - Helpers

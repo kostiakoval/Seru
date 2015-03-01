@@ -10,24 +10,21 @@ import Foundation
 import CoreData
 import Sweet
 
-protocol Stack {
+protocol CoreDataStack {
   
-  var errorHandler: ErrorHandling {get}
   var mainMOC: NSManagedObjectContext {get}
   var model: NSManagedObjectModel {get}
   var coordinator: NSPersistentStoreCoordinator {get}
 }
 
-public class BaseStack: Stack {
+public class BaseStack: CoreDataStack {
   
-  var errorHandler: ErrorHandling
-  var mainMOC: NSManagedObjectContext
-  public var model: NSManagedObjectModel
-  var coordinator: NSPersistentStoreCoordinator
+  let mainMOC: NSManagedObjectContext
+  public let model: NSManagedObjectModel
+  let coordinator: NSPersistentStoreCoordinator
   
   public init(name:String = AppInfo.productName, bundle: NSBundle = NSBundle.mainBundle(), type: StoreType = .SQLite, location: StoreLocation = .PrivateFolder) {
-      
-    errorHandler = ErrorHandler()
+
     model = modelWithName(name, inBundle: bundle)
     coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
     

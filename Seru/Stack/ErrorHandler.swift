@@ -15,7 +15,6 @@ public protocol ErrorHandling {
   func handle(errorMessage: String)
 }
 
-
 public struct ErrorHandler : ErrorHandling  {
   
   //MARK: - ErrorHandling
