@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import CoreData
 import Seru
-//import Nimble
+import Nimble
 
 class BaseStackTest: XCTestCase {
   
@@ -27,9 +27,9 @@ class BaseStackTest: XCTestCase {
     super.tearDown()
   }
   
-  func testExample() {
+  func testStactCreateion() {
     // This is an example of a functional test case.
-    XCTAssert(true, "Pass")
+    expect(stack).toNot(beNil())
   }
   
   func testPerformanceExample() {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B50925971AA354E800321D00 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B50925961AA354E800321D00 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B509259D1AA354E800321D00 /* Seru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; };
-		B50925A41AA354E800321D00 /* SeruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925A31AA354E800321D00 /* SeruTests.swift */; };
 		B50925C01AA356D300321D00 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; };
 		B50925C11AA356D800321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925C91AA356F400321D00 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C31AA356F400321D00 /* Actions.swift */; };
@@ -22,6 +21,7 @@
 		B50925D71AA3573A00321D00 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925D31AA3573A00321D00 /* StackTest.swift */; };
 		B50925D91AA3576A00321D00 /* Seru.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925DA1AA3577900321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B50925DE1AA3596E00321D00 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925DD1AA3596E00321D00 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B50925DE1AA3596E00321D00 /* Nimble.framework in CopyFiles */,
 				B50925DA1AA3577900321D00 /* Sweet.framework in CopyFiles */,
 				B50925D91AA3576A00321D00 /* Seru.framework in CopyFiles */,
 			);
@@ -64,8 +65,7 @@
 		B50925961AA354E800321D00 /* Seru.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Seru.h; sourceTree = "<group>"; };
 		B509259C1AA354E800321D00 /* SeruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50925A21AA354E800321D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B50925A31AA354E800321D00 /* SeruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeruTests.swift; sourceTree = "<group>"; };
-		B50925BF1AA356D300321D00 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
+		B50925BF1AA356D300321D00 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = ../Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
 		B50925C31AA356F400321D00 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		B50925C41AA356F400321D00 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceConfigurator.swift; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 		B50925C81AA356F400321D00 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
 		B50925D11AA3573A00321D00 /* Seru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seru.xcdatamodel; sourceTree = "<group>"; };
 		B50925D31AA3573A00321D00 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
+		B50925DD1AA3596E00321D00 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +100,9 @@
 		B50925871AA354E800321D00 = {
 			isa = PBXGroup;
 			children = (
-				B50925BF1AA356D300321D00 /* Sweet.framework */,
 				B50925931AA354E800321D00 /* Seru */,
 				B50925A01AA354E800321D00 /* SeruTests */,
+				B50925DB1AA3582800321D00 /* Frameworks */,
 				B50925921AA354E800321D00 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,9 +137,9 @@
 		B50925A01AA354E800321D00 /* SeruTests */ = {
 			isa = PBXGroup;
 			children = (
+				B50925DD1AA3596E00321D00 /* Nimble.framework */,
 				B50925D01AA3573A00321D00 /* Seru.xcdatamodeld */,
 				B50925D31AA3573A00321D00 /* StackTest.swift */,
-				B50925A31AA354E800321D00 /* SeruTests.swift */,
 				B50925A11AA354E800321D00 /* Supporting Files */,
 			);
 			path = SeruTests;
@@ -157,12 +158,29 @@
 			children = (
 				B50925C31AA356F400321D00 /* Actions.swift */,
 				B50925C41AA356F400321D00 /* ErrorHandler.swift */,
-				B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */,
-				B50925C61AA356F400321D00 /* PersistenceLayer.swift */,
 				B50925C71AA356F400321D00 /* Stack.swift */,
 				B50925C81AA356F400321D00 /* StackConfig.swift */,
+				B50925DC1AA3585000321D00 /* Old */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		B50925DB1AA3582800321D00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B50925BF1AA356D300321D00 /* Sweet.framework */,
+			);
+			name = Frameworks;
+			path = Seru;
+			sourceTree = "<group>";
+		};
+		B50925DC1AA3585000321D00 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */,
+				B50925C61AA356F400321D00 /* PersistenceLayer.swift */,
+			);
+			name = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50925D51AA3573A00321D00 /* Seru.xcdatamodeld in Sources */,
-				B50925A41AA354E800321D00 /* SeruTests.swift in Sources */,
 				B50925D71AA3573A00321D00 /* StackTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
