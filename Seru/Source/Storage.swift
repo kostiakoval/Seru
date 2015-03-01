@@ -9,20 +9,24 @@
 import Foundation
 import CoreData
 
-protocol PersistenceAtions {
+protocol StorageAtions {
 
   var errorHandler: ErrorHandling {get}
   func persist(moc: NSManagedObjectContext)
   
 }
 
-public class PersistenceStack {
+public class Storage {
   let stack: CoreDataStack
   let errorHandler: ErrorHandling
 
-  init (stack: CoreDataStack) {
+  public init (stack: CoreDataStack) {
     self.stack = stack
     errorHandler = ErrorHandler()
+  }
+
+  public convenience init() {
+    self.init(stack: BaseStack())
   }
   
   public func persist() {
@@ -60,7 +64,7 @@ public class PersistenceStack {
   
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
     
-    let context = PersistenceStack.backgroundContext(parent: stack.mainMOC)
+    let context = Storage.backgroundContext(parent: stack.mainMOC)
     context.performBlock {
       block(context: context)
       self.saveContextsChain(context, completion: completion)

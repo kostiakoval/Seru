@@ -11,15 +11,15 @@
 		B509259D1AA354E800321D00 /* Seru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; };
 		B50925C01AA356D300321D00 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; };
 		B50925C11AA356D800321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B50925C91AA356F400321D00 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C31AA356F400321D00 /* Actions.swift */; };
-		B50925CA1AA356F400321D00 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C41AA356F400321D00 /* ErrorHandler.swift */; };
-		B50925CD1AA356F400321D00 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C71AA356F400321D00 /* Stack.swift */; };
-		B50925CE1AA356F400321D00 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C81AA356F400321D00 /* StackConfig.swift */; };
 		B50925D51AA3573A00321D00 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B50925D01AA3573A00321D00 /* Seru.xcdatamodeld */; };
 		B50925D71AA3573A00321D00 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925D31AA3573A00321D00 /* StackTest.swift */; };
 		B50925D91AA3576A00321D00 /* Seru.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925DA1AA3577900321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925DE1AA3596E00321D00 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925DD1AA3596E00321D00 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58354091AA3823200DD3E22 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354051AA3823200DD3E22 /* ErrorHandler.swift */; };
+		B583540A1AA3823200DD3E22 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354061AA3823200DD3E22 /* Stack.swift */; };
+		B583540B1AA3823200DD3E22 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354071AA3823200DD3E22 /* StackConfig.swift */; };
+		B583540C1AA3823200DD3E22 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354081AA3823200DD3E22 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +64,13 @@
 		B509259C1AA354E800321D00 /* SeruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50925A21AA354E800321D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50925BF1AA356D300321D00 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = ../Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
-		B50925C31AA356F400321D00 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		B50925C41AA356F400321D00 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		B50925C71AA356F400321D00 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		B50925C81AA356F400321D00 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
 		B50925D11AA3573A00321D00 /* Seru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seru.xcdatamodel; sourceTree = "<group>"; };
 		B50925D31AA3573A00321D00 /* StackTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTest.swift; sourceTree = "<group>"; };
 		B50925DD1AA3596E00321D00 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		B58354051AA3823200DD3E22 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		B58354061AA3823200DD3E22 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		B58354071AA3823200DD3E22 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
+		B58354081AA3823200DD3E22 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		B50925931AA354E800321D00 /* Seru */ = {
 			isa = PBXGroup;
 			children = (
-				B50925C21AA356F400321D00 /* Stack */,
+				B58354041AA3823200DD3E22 /* Source */,
 				B50925941AA354E800321D00 /* Supporting Files */,
 			);
 			path = Seru;
@@ -149,17 +149,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B50925C21AA356F400321D00 /* Stack */ = {
-			isa = PBXGroup;
-			children = (
-				B50925C31AA356F400321D00 /* Actions.swift */,
-				B50925C41AA356F400321D00 /* ErrorHandler.swift */,
-				B50925C71AA356F400321D00 /* Stack.swift */,
-				B50925C81AA356F400321D00 /* StackConfig.swift */,
-			);
-			path = Stack;
-			sourceTree = "<group>";
-		};
 		B50925DB1AA3582800321D00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +156,17 @@
 			);
 			name = Frameworks;
 			path = Seru;
+			sourceTree = "<group>";
+		};
+		B58354041AA3823200DD3E22 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B58354051AA3823200DD3E22 /* ErrorHandler.swift */,
+				B58354061AA3823200DD3E22 /* Stack.swift */,
+				B58354071AA3823200DD3E22 /* StackConfig.swift */,
+				B58354081AA3823200DD3E22 /* Storage.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50925CE1AA356F400321D00 /* StackConfig.swift in Sources */,
-				B50925C91AA356F400321D00 /* Actions.swift in Sources */,
-				B50925CD1AA356F400321D00 /* Stack.swift in Sources */,
-				B50925CA1AA356F400321D00 /* ErrorHandler.swift in Sources */,
+				B583540B1AA3823200DD3E22 /* StackConfig.swift in Sources */,
+				B583540C1AA3823200DD3E22 /* Storage.swift in Sources */,
+				B583540A1AA3823200DD3E22 /* Stack.swift in Sources */,
+				B58354091AA3823200DD3E22 /* ErrorHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
