@@ -25,29 +25,19 @@ public class BaseStack: Stack {
   public var model: NSManagedObjectModel
   var coordinator: NSPersistentStoreCoordinator
   
-  public init(name:String = AppInfo.productName,
-    bundle: NSBundle = NSBundle.mainBundle(),
-    type: StoreType = .SQLite) {
+  public init(name:String = AppInfo.productName, bundle: NSBundle = NSBundle.mainBundle(), type: StoreType = .SQLite, location: StoreLocation = .PrivateFolder) {
       
     errorHandler = ErrorHandler()
-    model = modelInBundle(bundle)
+    model = modelWithName(name, inBundle: bundle)
     coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
     
     //setupCoordinator
-    let url = NSURL.fileURLWithPath(FileHelper.filePath(name))
+
+    let url = storeUrl(name, type: type, location: location)
     BaseStack.setupStore(coordinator, type: type, configuration: nil, URL: url)
 
     mainMOC = BaseStack.mainMOC(coordinator)
   }
-  
-  /*public convenience init(bundle: NSBundle) {
-    self.init(name: AppInfo.productName, bundle: NSBundle.mainBundle())
-  }
-  
-  public convenience init() {
-    self.init(name: , bundle: )
-  }*/
-
   
 //MARK: - Internal 
   

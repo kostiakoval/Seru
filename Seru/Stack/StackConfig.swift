@@ -8,20 +8,17 @@
 
 import Foundation
 import CoreData
+import Sweet
 
 //MARK: - Model
 
-func modelInBundle(bundle: NSBundle) -> NSManagedObjectModel {
-  return modelForBundles([bundle])
-}
-
-private func modelForBundles(bundles: [NSBundle]?) -> NSManagedObjectModel {
-  if let m = NSManagedObjectModel.mergedModelFromBundles(bundles) {
-    return m
+func modelWithName(name: String, inBundle bundle: NSBundle) -> NSManagedObjectModel {
+  if let modelURL = bundle.URLForResource(name, withExtension: "momd"),
+    let model = NSManagedObjectModel(contentsOfURL:modelURL) {
+      return model
   }
-  assertionFailure("Cant get model for bundles")
+  assertionFailure("Model with name is not available")
 }
-
 
 //MARK: Store Coordinator
 
@@ -39,40 +36,23 @@ public enum StoreType {
   }
 }
 
-public enum StoreLocationType : Equatable {
-  //Located in Documents directory. Visible only to the app
-  case PrivateFolder
-  // Located in shared Group directory and visible to all exntesion that have access to that group
-  case SharedGroup(String)
+public enum StoreLocation {
+  case PrivateFolder // NSDomentDirectiry Folder
+  case SharedGroup(String) // Located in shared Group directory
 }
 
-public  func == (lhs:StoreLocationType, rhs:StoreLocationType) -> Bool {
-  switch (lhs, rhs) {
-  case (.PrivateFolder, .PrivateFolder): return true
-  case (.SharedGroup, .SharedGroup): return true
-  case (_, _): return false
+
+func storeUrl(name: String, #type: StoreType, #location: StoreLocation) -> NSURL? {
+  
+  switch (type, location) {
+    
+  case (.Binary, .PrivateFolder):
+    return NSURL.fileURLWithPath(FileHelper.filePath("\(name).data"))
+  case (.SQLite, .PrivateFolder):
+    return NSURL.fileURLWithPath(FileHelper.filePath("\(name).sqlite"))
+  case (_, .SharedGroup(let group)):
+    return FileHelper.sharedFilePath(group)(file: "\(name).sqlite")
+  case (_, _):
+    return nil
   }
-}
-
-
-//MARK: - Not used
-
-func mainBundleModel() -> NSManagedObjectModel {
-  return modelForBundles(nil)
-}
-
-func allFrameworksBundlesModel() -> NSManagedObjectModel {
-  return modelForBundles(NSBundle.allFrameworks() as? [NSBundle])
-}
-
-func allAppBundlesModel() -> NSManagedObjectModel {
-  return modelForBundles(NSBundle.allBundles() as? [NSBundle])
-}
-
-func modelWithName(name: String) -> NSManagedObjectModel {
-  if let modelURL = NSBundle.mainBundle().URLForResource("name", withExtension: "momd"),
-    let model = NSManagedObjectModel(contentsOfURL:modelURL) {
-      return model
-  }
-  assertionFailure("Model with name is not available")
 }

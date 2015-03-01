@@ -13,8 +13,6 @@
 		B50925C11AA356D800321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925C91AA356F400321D00 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C31AA356F400321D00 /* Actions.swift */; };
 		B50925CA1AA356F400321D00 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C41AA356F400321D00 /* ErrorHandler.swift */; };
-		B50925CB1AA356F400321D00 /* PersistanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */; };
-		B50925CC1AA356F400321D00 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C61AA356F400321D00 /* PersistenceLayer.swift */; };
 		B50925CD1AA356F400321D00 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C71AA356F400321D00 /* Stack.swift */; };
 		B50925CE1AA356F400321D00 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925C81AA356F400321D00 /* StackConfig.swift */; };
 		B50925D51AA3573A00321D00 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B50925D01AA3573A00321D00 /* Seru.xcdatamodeld */; };
@@ -68,8 +66,6 @@
 		B50925BF1AA356D300321D00 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = ../Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
 		B50925C31AA356F400321D00 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		B50925C41AA356F400321D00 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceConfigurator.swift; sourceTree = "<group>"; };
-		B50925C61AA356F400321D00 /* PersistenceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		B50925C71AA356F400321D00 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		B50925C81AA356F400321D00 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
 		B50925D11AA3573A00321D00 /* Seru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seru.xcdatamodel; sourceTree = "<group>"; };
@@ -120,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				B50925C21AA356F400321D00 /* Stack */,
-				B50925961AA354E800321D00 /* Seru.h */,
 				B50925941AA354E800321D00 /* Supporting Files */,
 			);
 			path = Seru;
@@ -129,6 +124,7 @@
 		B50925941AA354E800321D00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B50925961AA354E800321D00 /* Seru.h */,
 				B50925951AA354E800321D00 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -160,7 +156,6 @@
 				B50925C41AA356F400321D00 /* ErrorHandler.swift */,
 				B50925C71AA356F400321D00 /* Stack.swift */,
 				B50925C81AA356F400321D00 /* StackConfig.swift */,
-				B50925DC1AA3585000321D00 /* Old */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -172,15 +167,6 @@
 			);
 			name = Frameworks;
 			path = Seru;
-			sourceTree = "<group>";
-		};
-		B50925DC1AA3585000321D00 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				B50925C51AA356F400321D00 /* PersistanceConfigurator.swift */,
-				B50925C61AA356F400321D00 /* PersistenceLayer.swift */,
-			);
-			name = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +282,6 @@
 				B50925C91AA356F400321D00 /* Actions.swift in Sources */,
 				B50925CD1AA356F400321D00 /* Stack.swift in Sources */,
 				B50925CA1AA356F400321D00 /* ErrorHandler.swift in Sources */,
-				B50925CB1AA356F400321D00 /* PersistanceConfigurator.swift in Sources */,
-				B50925CC1AA356F400321D00 /* PersistenceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
