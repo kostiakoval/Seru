@@ -12,8 +12,9 @@ import CoreData
 protocol StorageAtions {
 
   var errorHandler: ErrorHandling {get}
+  var mainMOC: NSManagedObjectContext {get}
+
   func persist(moc: NSManagedObjectContext)
-  
 }
 
 public class Storage {
@@ -33,6 +34,11 @@ public class Storage {
     return persist(stack.mainMOC)
   }
 
+
+  var mainMOC: NSManagedObjectContext {
+    return stack.mainMOC
+  }
+  
   public func persist(moc: NSManagedObjectContext) {
     saveContext(moc)
   }

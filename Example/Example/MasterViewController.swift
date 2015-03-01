@@ -8,11 +8,10 @@
 
 import UIKit
 import CoreData
-import Seru
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-  var stack: PersistenceLayer!
+  var stack: Storage!
   var objects: [NSManagedObject]!
 
   override func viewDidLoad() {
@@ -43,7 +42,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: stack.mainMOC) as! NSManagedObject
     object.setValue(NSDate(), forKey: "time")
-    stack.persist()
+    //stack.persist()
     updateTable()
   }
 
@@ -68,7 +67,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     if editingStyle == .Delete {
       let context = self.stack.mainMOC
       context.deleteObject(objects[indexPath.row] as NSManagedObject)
-      stack.persist()
+      //stack.persist()
       updateTable()
     }
   }

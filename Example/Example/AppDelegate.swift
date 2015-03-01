@@ -7,23 +7,26 @@
 //
 
 import UIKit
-import Seru
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
-  var persistenceController =  PersistenceLayer()
+  var storage = Storage()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     
     let viewController = (window?.rootViewController as! UINavigationController).topViewController as! MasterViewController
-    viewController.stack = persistenceController
+    viewController.stack = storage
     return true
   }
-
+  
+  func applicationDidEnterBackground(application: UIApplication) {
+    storage.persist()
+    
+  }
   func applicationWillTerminate(application: UIApplication) {
-    persistenceController.persist()
+    storage.persist()
   }
 }
 
