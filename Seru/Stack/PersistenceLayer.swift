@@ -8,8 +8,6 @@
 
 import Foundation
 import CoreData
-import Sweet
-
 
 public class PersistenceStack {
   

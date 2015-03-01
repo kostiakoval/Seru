@@ -11,6 +11,19 @@ import CoreData
 
 //MARK: - Model
 
+func modelInBundle(bundle: NSBundle) -> NSManagedObjectModel {
+  return modelForBundles([bundle])
+}
+
+private func modelForBundles(bundles: [NSBundle]?) -> NSManagedObjectModel {
+  if let m = NSManagedObjectModel.mergedModelFromBundles(bundles) {
+    return m
+  }
+  assertionFailure("Cant get model for bundles")
+}
+
+//MARK: - Not used 
+
 func mainBundleModel() -> NSManagedObjectModel {
   return modelForBundles(nil)
 }
@@ -23,9 +36,10 @@ func allAppBundlesModel() -> NSManagedObjectModel {
   return modelForBundles(NSBundle.allBundles() as? [NSBundle])
 }
 
-private func modelForBundles(bundles: [NSBundle]?) -> NSManagedObjectModel {
-  if let m = NSManagedObjectModel.mergedModelFromBundles(bundles) {
-    return m
+func modelWithName(name: String) -> NSManagedObjectModel {
+  if let modelURL = NSBundle.mainBundle().URLForResource("name", withExtension: "momd"),
+    let model = NSManagedObjectModel(contentsOfURL:modelURL) {
+      return model
   }
-  assertionFailure("Cant get model for bundles")
+  assertionFailure("Model with name is not available")
 }

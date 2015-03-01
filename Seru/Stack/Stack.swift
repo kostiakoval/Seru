@@ -12,37 +12,40 @@ import CoreData
 protocol Stack {
   
   var errorHandler: ErrorHandling {get}
-  
   var mainMOC: NSManagedObjectContext {get}
   var model: NSManagedObjectModel {get}
   var coordinator: NSPersistentStoreCoordinator {get}
-  
 }
 
 public class BaseStack: Stack {
   
   var errorHandler: ErrorHandling
-  
   var mainMOC: NSManagedObjectContext
-  var model: NSManagedObjectModel
+  public var model: NSManagedObjectModel
   var coordinator: NSPersistentStoreCoordinator
   
-  public init() {
-    errorHandler = ErrorHandler()
-    model = mainBundleModel()
-    coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
-    //setupCoordinator
-    
-    mainMOC = BaseStack.mainMOC(coordinator);
-  }
-  
-  init(moc: NSManagedObjectContext, model: NSManagedObjectModel, coordinator: NSPersistentStoreCoordinator, errorHandler: ErrorHandling) {
+  /*init(moc: NSManagedObjectContext, model: NSManagedObjectModel, coordinator: NSPersistentStoreCoordinator, errorHandler: ErrorHandling) {
     self.mainMOC = moc
     self.model = model
     self.coordinator = coordinator
     self.errorHandler = errorHandler
+  }*/
+  
+  public init(bundle: NSBundle) {
+    errorHandler = ErrorHandler()
+    model = modelInBundle(bundle)
+    
+    coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
+    //setupCoordinator
+    mainMOC = BaseStack.mainMOC(coordinator);
+
+  }
+  
+  public convenience init() {
+    self.init(bundle: NSBundle.mainBundle())
   }
 
+  
 //MARK: - Internal 
   
   static func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
