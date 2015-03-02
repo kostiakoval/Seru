@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func applicationDidEnterBackground(application: UIApplication) {
     storage.persist()
-    
   }
+    
   func applicationWillTerminate(application: UIApplication) {
     storage.persist()
   }

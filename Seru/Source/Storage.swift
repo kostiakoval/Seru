@@ -30,60 +30,89 @@ public class Storage {
     self.init(stack: BaseStack())
   }
   
+//MARK: - Functionalioty 
+
   public func persist() {
     return persist(stack.mainMOC)
   }
 
-
-  var mainMOC: NSManagedObjectContext {
-    return stack.mainMOC
-  }
-  
   public func persist(moc: NSManagedObjectContext) {
     saveContext(moc)
   }
   
-  public func saveContext(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
-    
-    moc.performBlock {
-      var error: NSError?
-      var result: Bool = true
-      
-      if moc.hasChanges && !moc.save(&error) {
-        self.errorHandler.handle(error!)
-        result = false
-      }
-      main_queue_call_if(completion, result)
+//MARK: - Perform
+
+  public func performInBackgroundContext(block: (context: NSManagedObjectContext) -> Void) {
+    let context = Storage.backgroundContext(parent: stack.mainMOC)
+    performWorkInContext(context, block: block)
     }
+  
+  public func performInMainContext(block: (context: NSManagedObjectContext) -> Void) {
+    performWorkInContext(stack.mainMOC, block: block)
   }
   
-  public func saveContextsChain(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
-    
-    saveContext(moc) { [unowned self] result in
-      if result && moc.parentContext != nil {
-        self.saveContextsChain(moc.parentContext!, completion: completion)
-      } else {
-        call_if(completion, result)
-      }
+  func performWorkInContext(context: NSManagedObjectContext, block: (context: NSManagedObjectContext) -> Void) {
+    context.performBlock {
+      block(context: context)
     }
   }
+
+  public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void) {
+    self.performBackgroundSave(block, completion: nil)
+  }
   
-  public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? ) {
+  public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? = nil) {
     
     let context = Storage.backgroundContext(parent: stack.mainMOC)
     context.performBlock {
       block(context: context)
-      self.saveContextsChain(context, completion: completion)
+      self.saveContext(context, completion: {result in
+        
+        if let parentContex = context.parentContext {
+          self.saveContextsChain(parentContex, completion: completion);
+        } else {
+          call_if(completion, result)
+        }
+      });
     }
   }
   
-  //MARKL:- Context
+//MARKL:- Context
   public class func backgroundContext(parent: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
     var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     context.name = "Background"
     context.parentContext = parent
     return context
   }
+  
+//MARK: - Private
+  
+  //MARK: - Save
+  public func saveContext(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
+  
+    var error: NSError?
+    var result: Bool = true
+    
+    if moc.hasChanges && !moc.save(&error) {
+      self.errorHandler.handle(error!)
+      result = false
+    }
+    main_queue_call_if(completion, result)
+  }
+
+  func saveContextsChain(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
+
+    moc.performBlock {
+      self.saveContext(moc) { [unowned self] result in
+        if result && moc.parentContext != nil {
+          self.saveContextsChain(moc.parentContext!, completion: completion)
+        } else {
+          call_if(completion, result)
+        }
+      }
+    }
+  }
+
 }
 
 //MARK - Helpers

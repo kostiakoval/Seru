@@ -12,38 +12,38 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
   var stack: Storage!
-  var objects: [NSManagedObject]!
+  var objects: [NSManagedObject] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
     let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
     self.navigationItem.rightBarButtonItem = addButton
-    fetch()
-  }
-  
-  func updateTable() {
-    fetch()
-    tableView.reloadData()
+    reloadData()
   }
 
-
-  func fetch() {
-    let fetch = NSFetchRequest(entityName: "Entity")
-    var error: NSError?
-    if let result = stack.mainMOC.executeFetchRequest(fetch, error: &error) as? [NSManagedObject] {
-      objects = result
+  func reloadData() {
+    
+    stack.performInMainContext { context in
+      let fetch = NSFetchRequest(entityName: "Entity")
+      var error: NSError?
+      if let result = context.executeFetchRequest(fetch, error: &error) as? [NSManagedObject] {
+        self.objects = result
+        self.tableView.reloadData()
+      }
     }
   }
   
   func insertNewObject(sender: AnyObject) {
     
-    var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: stack.mainMOC) as! NSManagedObject
-    object.setValue(NSDate(), forKey: "time")
-    //stack.persist()
-    updateTable()
+    stack.performBackgroundSave({ context in
+      var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! NSManagedObject
+      object.setValue(NSDate(), forKey: "time")
+    
+    },completion: { completed in
+      self.reloadData()
+    })
   }
 
   // MARK: - Table View
@@ -65,10 +65,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
   override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     if editingStyle == .Delete {
-      let context = self.stack.mainMOC
-      context.deleteObject(objects[indexPath.row] as NSManagedObject)
-      //stack.persist()
-      updateTable()
+  
+      let objectID = (self.objects[indexPath.row] as NSManagedObject).objectID
+      self.stack.performBackgroundSave({ (context: NSManagedObjectContext) in
+        let object = context.objectWithID(objectID)
+        context.deleteObject(object)
+      }, completion: { result in
+        self.reloadData()
+      })
     }
   }
 
