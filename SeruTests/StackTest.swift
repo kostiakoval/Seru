@@ -28,6 +28,7 @@ class BaseStackTest: XCTestCase {
     // This is an example of a functional test case.
     expect(stack).toNot(beNil())
     expect(stack.model.entities.count).to(equal(1))
+    expect(stack.mainMOC).toNot(beNil())
+    expect(stack.coordinator).toNot(beNil())
   }
-    
 }
