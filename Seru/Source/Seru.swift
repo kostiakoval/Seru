@@ -17,7 +17,7 @@ protocol StorageAtions {
   func persist(moc: NSManagedObjectContext)
 }
 
-public class Storage {
+public class Seru {
   let stack: CoreDataStack
   let errorHandler: ErrorHandling
 
@@ -43,7 +43,7 @@ public class Storage {
 //MARK: - Perform
 
   public func performInBackgroundContext(block: (context: NSManagedObjectContext) -> Void) {
-    let context = Storage.backgroundContext(parent: stack.mainMOC)
+    let context = Seru.backgroundContext(parent: stack.mainMOC)
     performWorkInContext(context, block: block)
     }
   
@@ -63,7 +63,7 @@ public class Storage {
   
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? = nil) {
     
-    let context = Storage.backgroundContext(parent: stack.mainMOC)
+    let context = Seru.backgroundContext(parent: stack.mainMOC)
     context.performBlock {
       block(context: context)
       self.saveContext(context, completion: {result in

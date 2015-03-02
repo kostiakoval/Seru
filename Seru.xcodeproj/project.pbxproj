@@ -19,7 +19,7 @@
 		B58354091AA3823200DD3E22 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354051AA3823200DD3E22 /* ErrorHandler.swift */; };
 		B583540A1AA3823200DD3E22 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354061AA3823200DD3E22 /* Stack.swift */; };
 		B583540B1AA3823200DD3E22 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354071AA3823200DD3E22 /* StackConfig.swift */; };
-		B583540C1AA3823200DD3E22 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354081AA3823200DD3E22 /* Storage.swift */; };
+		B583540C1AA3823200DD3E22 /* Seru.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354081AA3823200DD3E22 /* Seru.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,7 @@
 		B58354051AA3823200DD3E22 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B58354061AA3823200DD3E22 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		B58354071AA3823200DD3E22 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
-		B58354081AA3823200DD3E22 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B58354081AA3823200DD3E22 /* Seru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seru.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 				B58354051AA3823200DD3E22 /* ErrorHandler.swift */,
 				B58354061AA3823200DD3E22 /* Stack.swift */,
 				B58354071AA3823200DD3E22 /* StackConfig.swift */,
-				B58354081AA3823200DD3E22 /* Storage.swift */,
+				B58354081AA3823200DD3E22 /* Seru.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B583540B1AA3823200DD3E22 /* StackConfig.swift in Sources */,
-				B583540C1AA3823200DD3E22 /* Storage.swift in Sources */,
+				B583540C1AA3823200DD3E22 /* Seru.swift in Sources */,
 				B583540A1AA3823200DD3E22 /* Stack.swift in Sources */,
 				B58354091AA3823200DD3E22 /* ErrorHandler.swift in Sources */,
 			);

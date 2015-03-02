@@ -12,21 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
-  var storage = Storage()
+  var seruStack = Seru()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     
     let viewController = (window?.rootViewController as! UINavigationController).topViewController as! MasterViewController
-    viewController.stack = storage
+    viewController.seruStack = seruStack
     return true
   }
   
   func applicationDidEnterBackground(application: UIApplication) {
-    storage.persist()
+    seruStack.persist()
   }
     
   func applicationWillTerminate(application: UIApplication) {
-    storage.persist()
+    seruStack.persist()
   }
 }
 

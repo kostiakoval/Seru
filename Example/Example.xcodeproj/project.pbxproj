@@ -10,10 +10,10 @@
 		B509260D1AA366C800321D00 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B509260C1AA366C800321D00 /* Sweet.framework */; };
 		B509260F1AA366D900321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B509260C1AA366C800321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50F065C1A4EB40F009D59CE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F065A1A4EB40F009D59CE /* MasterViewController.swift */; };
+		B52FD10E1AA50FE900220A41 /* Seru.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FD10D1AA50FE900220A41 /* Seru.swift */; };
 		B583541B1AA382C200DD3E22 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354171AA382C200DD3E22 /* ErrorHandler.swift */; };
 		B583541C1AA382C200DD3E22 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354181AA382C200DD3E22 /* Stack.swift */; };
 		B583541D1AA382C200DD3E22 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354191AA382C200DD3E22 /* StackConfig.swift */; };
-		B583541E1AA382C200DD3E22 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B583541A1AA382C200DD3E22 /* Storage.swift */; };
 		B59F93AB19AE183A00AA2ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F93AA19AE183A00AA2ED3 /* AppDelegate.swift */; };
 		B59F93B019AE183A00AA2ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59F93AE19AE183A00AA2ED3 /* Main.storyboard */; };
 		B59F93B219AE183A00AA2ED3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59F93B119AE183A00AA2ED3 /* Images.xcassets */; };
@@ -36,10 +36,10 @@
 /* Begin PBXFileReference section */
 		B509260C1AA366C800321D00 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = ../Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
 		B50F065A1A4EB40F009D59CE /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B52FD10D1AA50FE900220A41 /* Seru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seru.swift; sourceTree = "<group>"; };
 		B58354171AA382C200DD3E22 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B58354181AA382C200DD3E22 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		B58354191AA382C200DD3E22 /* StackConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
-		B583541A1AA382C200DD3E22 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B59F93A519AE183A00AA2ED3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59F93A919AE183A00AA2ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59F93AA19AE183A00AA2ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				B58354171AA382C200DD3E22 /* ErrorHandler.swift */,
 				B58354181AA382C200DD3E22 /* Stack.swift */,
 				B58354191AA382C200DD3E22 /* StackConfig.swift */,
-				B583541A1AA382C200DD3E22 /* Storage.swift */,
+				B52FD10D1AA50FE900220A41 /* Seru.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -189,10 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B583541E1AA382C200DD3E22 /* Storage.swift in Sources */,
 				B583541C1AA382C200DD3E22 /* Stack.swift in Sources */,
 				B583541D1AA382C200DD3E22 /* StackConfig.swift in Sources */,
 				B50F065C1A4EB40F009D59CE /* MasterViewController.swift in Sources */,
+				B52FD10E1AA50FE900220A41 /* Seru.swift in Sources */,
 				B583541B1AA382C200DD3E22 /* ErrorHandler.swift in Sources */,
 				B59F93D419AE1A1D00AA2ED3 /* Example.xcdatamodeld in Sources */,
 				B59F93AB19AE183A00AA2ED3 /* AppDelegate.swift in Sources */,
