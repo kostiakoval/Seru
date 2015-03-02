@@ -28,7 +28,8 @@ var seruStack: Seru
 seruStack.persist()
 ```
 
-Perform background save
+Perform background save.
+All the changes will be saved to the context
 ```swift
 seruStack.performBackgroundSave({ context in
   let person = Person.(managedObjectContext: context)
