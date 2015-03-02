@@ -29,7 +29,6 @@ public class BaseStack: CoreDataStack {
     coordinator =  NSPersistentStoreCoordinator(managedObjectModel: model)
     
     //setupCoordinator
-
     let url = storeUrl(name, type: type, location: location)
     BaseStack.setupStore(coordinator, type: type, configuration: nil, URL: url)
 
@@ -52,9 +51,4 @@ public class BaseStack: CoreDataStack {
     coordinator.addPersistentStoreWithType(type.coreDataType, configuration: configuration, URL: URL, options: options, error: &error)
     return error
   }
-}
-
-public class SimpleStack: BaseStack {
-    
-  
 }

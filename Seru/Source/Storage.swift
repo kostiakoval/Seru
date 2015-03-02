@@ -87,11 +87,6 @@ public class Storage {
 }
 
 //MARK - Helpers
-func if_let<T>(a: T?, f: (T) -> Void) {
-  if let a = a {
-    f(a)
-  }
-}
 
 func call_if<P>(f: (P -> Void)?, param: P) {
   if let f = f {
