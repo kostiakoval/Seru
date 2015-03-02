@@ -12,29 +12,39 @@ Seru provides a simple Core Data Stack and actions API
 ## Usages
 
 #### Setup CoreData
- 
-1 Line to setup
 
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate {            
   lazy var seruStack = Seru()
   ...
+}
 ```
 
-#### Save
+#### Actions 
 
+Save
 ```swift
 var seruStack: Seru
 seruStack.persist()
 ```
 
 Perform background save
-
 ```swift
 seruStack.performBackgroundSave({ context in
   let person = Person.(managedObjectContext: context)
 }
 ```
+
+Perform background work
+```swift
+seruStack.performInBackgroundContext { context in
+  let fetch = NSFetchRequest(entityName: "Person")
+  var error: NSError?
+  let result = context.executeFetchRequest(fetch, error: &error)
+}
+```
+
+
 
 ##Installation
 
