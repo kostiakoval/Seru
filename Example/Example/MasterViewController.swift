@@ -11,21 +11,21 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-  var stack: Storage!
+  var seruStack: Seru!
   var objects: [NSManagedObject] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    navigationItem.leftBarButtonItem = self.editButtonItem()
     let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-    self.navigationItem.rightBarButtonItem = addButton
+    navigationItem.rightBarButtonItem = addButton
     reloadData()
   }
 
   func reloadData() {
     
-    stack.performInMainContext { context in
+    seruStack.performInMainContext { context in
       let fetch = NSFetchRequest(entityName: "Entity")
       var error: NSError?
       if let result = context.executeFetchRequest(fetch, error: &error) as? [NSManagedObject] {
@@ -37,7 +37,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   
   func insertNewObject(sender: AnyObject) {
     
-    stack.performBackgroundSave({ context in
+    seruStack.performBackgroundSave({ context in
       var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! NSManagedObject
       object.setValue(NSDate(), forKey: "time")
     
@@ -54,7 +54,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-    self.configureCell(cell, atIndexPath: indexPath)
+    configureCell(cell, atIndexPath: indexPath)
     return cell
   }
 
@@ -67,7 +67,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     if editingStyle == .Delete {
   
       let objectID = (self.objects[indexPath.row] as NSManagedObject).objectID
-      self.stack.performBackgroundSave({ (context: NSManagedObjectContext) in
+      seruStack.performBackgroundSave({ (context: NSManagedObjectContext) in
         let object = context.objectWithID(objectID)
         context.deleteObject(object)
       }, completion: { result in
