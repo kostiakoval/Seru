@@ -420,7 +420,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/konstantin/My_Projects/MyPods/Seru/Carthage/Build/iOS,
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Seru/Info.plist;
@@ -441,7 +440,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/konstantin/My_Projects/MyPods/Seru/Carthage/Build/iOS,
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Seru/Info.plist;
