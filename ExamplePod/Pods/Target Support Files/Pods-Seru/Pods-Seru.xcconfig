@@ -1,2 +1,0 @@
-PODS_SERU_FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/../../Carthage/Build/iOS"
-PODS_SERU_OTHER_LDFLAGS = -framework "Sweet"

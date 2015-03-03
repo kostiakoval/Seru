@@ -1,6 +1,6 @@
 {
   "name": "Seru",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "Seru is Simple Core Data stack",
   "description": "                   Seru is Swift framework for working wit Core Data. It setup your core data stack and \n                   gives you nica actions to work with it\n",
   "homepage": "https://github.com/kostiakoval/Seru",
@@ -17,7 +17,7 @@
   },
   "source": {
     "git": "https://github.com/kostiakoval/Seru.git",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "source_files": [
     "Seru/Source",
