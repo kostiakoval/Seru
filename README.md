@@ -3,7 +3,8 @@ Seru (セル)
 Seru is Cell in Japanees
 
 [![Build Status](https://travis-ci.org/kostiakoval/Seru.svg?branch=develop)](https://travis-ci.org/kostiakoval/Seru) 
-[![Issue Stats](http://issuestats.com/github/kostiakoval/Seru/badge/pr)](http://issuestats.com/github/kostiakoval/Seru)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Seru.svg)]()
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ##Core Data Stack in Swift.
 Clean and Beautiful Core Data stack in **1** line of code `PersistenceLayer()`  
@@ -48,6 +49,15 @@ seruStack.performInBackgroundContext { context in
 
 
 ##Installation
+
+### CocoaPods
+Install latest version of cocoapods `[sudo] gem install cocoapods --pre`  
+
+Podfile  
+```
+use_frameworks!
+pod 'Seru'
+```
 
 ### Carthage
 Installation is available using the dependency manager Carthage.
