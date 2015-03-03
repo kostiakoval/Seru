@@ -7,3 +7,4 @@ before_install:
 
 script:
 - xcodebuild -project Seru.xcodeproj -scheme Seru build test | xcpretty -c; exit ${PIPESTATUS[0]}
+- pod lib lint --quick
