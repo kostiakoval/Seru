@@ -4,7 +4,7 @@ osx_image: xcode61
 before_install:
 - git submodule update --init --recursive
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-- brew install cathage
+- brew install carthage
 - carthage bootstrap
 
 script:
