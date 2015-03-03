@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import Sweet
 
 //MARK: - Model
 
