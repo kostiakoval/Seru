@@ -37,14 +37,14 @@ public class BaseStack: CoreDataStack {
   
 //MARK: - Internal 
   
-  static func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
+  class func mainMOC (storeCoordinator:  NSPersistentStoreCoordinator) -> NSManagedObjectContext {
     let moc = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
     moc.persistentStoreCoordinator = storeCoordinator
     moc.name = "main"
     return moc
   }
   
-  static func setupStore(coordinator: NSPersistentStoreCoordinator, type:StoreType, configuration: String?, URL: NSURL?) -> NSError? {
+  class func setupStore(coordinator: NSPersistentStoreCoordinator, type:StoreType, configuration: String?, URL: NSURL?) -> NSError? {
     
     let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption:true]
     var error: NSError?

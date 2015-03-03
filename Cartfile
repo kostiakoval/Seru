@@ -1,2 +1,2 @@
-github "kostiakoval/Sweet" "develop"
-github "Quick/Nimble"
+github "kostiakoval/Sweet" "swift-1.1"
+github "Quick/Nimble" "swift-1.1"

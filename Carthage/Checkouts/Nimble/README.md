@@ -1,6 +1,6 @@
 # Nimble
 
-[![Build Status](https://travis-ci.org/Quick/Nimble.svg?branch=swift-1.1)](https://travis-ci.org/Quick/Nimble)
+[![Build Status](https://travis-ci.org/Quick/Nimble.svg?branch=master)](https://travis-ci.org/Quick/Nimble)
 
 Use Nimble to express the expected outcomes of Swift
 or Objective-C expressions. Inspired by
@@ -180,11 +180,11 @@ let exception = NSException(
 expect(exception.raise()).to(raiseException())
 
 // Also, you can customize raiseException to be more specific
-expect{ exception.raise() }.to(raiseException(named: NSInternalInconsistencyException))
-expect{ exception.raise() }.to(raiseException(
+expect(exception.raise()).to(raiseException(named: NSInternalInconsistencyException))
+expect(exception.raise()).to(raiseException(
     named: NSInternalInconsistencyException,
     reason: "Not enough fish in the sea"))
-expect{ exception.raise() }.to(raiseException(
+expect(exception.raise()).to(raiseException(
     named: NSInternalInconsistencyException,
     reason: "Not enough fish in the sea",
     userInfo: ["something": "is fishy"]))
@@ -807,10 +807,9 @@ also check out the tips below.
 
 ## Lazy Evaluation
 
-`actualExpression` is a lazy, memoized closure around the value provided to the
-`expect` function. The expression can either be a closure or a value directly
-passed to `expect(...)`. In order to determine whether that value matches,
-custom matchers should call `actualExpression.evaluate()`:
+`actualExpression` is a lazy, memoized closure around the value provided to
+the `expect` function. In order to determine whether that value matches,
+custom matchers should call `actualExpression.evalaute()`:
 
 ```swift
 // Swift
@@ -827,9 +826,6 @@ In the above example, `actualExpression` is not `nil`--it is a closure
 that returns a value. The value it returns, which is accessed via the
 `evaluate()` method, may be `nil`. If that value is `nil`, the `beNil`
 matcher function returns `true`, indicating that the expectation passed.
-
-Use `expression.isClosure` to determine if the expression will be invoking
-a closure to produce its value.
 
 ## Type Checking via Swift Generics
 
@@ -976,9 +972,7 @@ extension NMBObjCMatcher {
   README](https://github.com/Quick/Quick#how-to-install-quick).
 
 Nimble can currently be installed in one of two ways: using a pre-release 
-version of CocoaPods, or with git submodules. The master branch of
-Nimble supports Swift 1.2. For Swift 1.1 support, use the `swift-1.1`
-branch.
+version of CocoaPods, or with git submodules. 
 
 ## Installing Nimble as a Submodule
 
@@ -986,7 +980,7 @@ To use Nimble as a submodule to test your iOS or OS X applications, follow these
 4 easy steps:
 
 1. Clone the Nimble repository
-2. Add Nimble.xcodeproj to the Xcode workspace for your project
+2. Add Nimble.xcodeproj to your test target
 3. Link Nimble.framework to your test target
 4. Start writing expectations!
 

@@ -1,0 +1,14 @@
+PODS:
+  - Seru (0.0.1)
+
+DEPENDENCIES:
+  - Seru (from `~/My_Projects/MyPods/Seru/`)
+
+EXTERNAL SOURCES:
+  Seru:
+    :path: ~/My_Projects/MyPods/Seru/
+
+SPEC CHECKSUMS:
+  Seru: 543d01083243fe275c34cce4d1d5656d8350a8bb
+
+COCOAPODS: 0.36.0.rc.1
