@@ -29,5 +29,5 @@ DerivedData
 # Pods/
 
 #Carthage
-Carthage/
+Carthage/Checkouts/
 
