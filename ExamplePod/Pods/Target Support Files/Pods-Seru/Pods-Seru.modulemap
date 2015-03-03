@@ -1,6 +1,0 @@
-framework module Seru {
-  umbrella header "Pods-Seru-umbrella.h"
-
-  export *
-  module * { export * }
-}

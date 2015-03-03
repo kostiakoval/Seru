@@ -2,18 +2,9 @@ PODS:
   - Seru (0.0.3)
 
 DEPENDENCIES:
-  - Seru (from `https://github.com/kostiakoval/Seru.git`)
-
-EXTERNAL SOURCES:
-  Seru:
-    :git: https://github.com/kostiakoval/Seru.git
-
-CHECKOUT OPTIONS:
-  Seru:
-    :commit: e0ff9d8aaacaa57bae945586694930c869cc511c
-    :git: https://github.com/kostiakoval/Seru.git
+  - Seru
 
 SPEC CHECKSUMS:
-  Seru: ba027a1bc86a1028510a0777573c86a03ca85ab5
+  Seru: 386ee9fe680199d69b33005878cd9bcf7bd8a116
 
 COCOAPODS: 0.36.0.rc.1
