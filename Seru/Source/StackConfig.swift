@@ -13,9 +13,10 @@ import Sweet
 //MARK: - Model
 
 func modelWithName(name: String, inBundle bundle: NSBundle) -> NSManagedObjectModel {
-  if let modelURL = bundle.URLForResource(name, withExtension: "momd"),
-    let model = NSManagedObjectModel(contentsOfURL:modelURL) {
+  if let modelURL = bundle.URLForResource(name, withExtension: "momd") {
+    if let model = NSManagedObjectModel(contentsOfURL:modelURL) {
       return model
+    }
   }
   assertionFailure("Model with name is not available")
 }

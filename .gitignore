@@ -28,3 +28,6 @@ DerivedData
 #
 # Pods/
 
+#Carthage
+Carthage/
+

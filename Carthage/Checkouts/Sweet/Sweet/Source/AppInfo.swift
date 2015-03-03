@@ -13,7 +13,7 @@ public class AppInfo {
   public class var productName: String {
     
     if let dic = NSBundle.mainBundle().infoDictionary {
-      return dic ["CFBundleName"] as! String
+      return dic ["CFBundleName"] as String
     }
     assertionFailure("can't get CFBundleName")
   }

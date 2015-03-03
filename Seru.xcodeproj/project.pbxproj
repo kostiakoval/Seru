@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B50925971AA354E800321D00 /* Seru.h in Headers */ = {isa = PBXBuildFile; fileRef = B50925961AA354E800321D00 /* Seru.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B509259D1AA354E800321D00 /* Seru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; };
-		B50925C01AA356D300321D00 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; };
-		B50925C11AA356D800321D00 /* Sweet.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B50925D51AA3573A00321D00 /* Seru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B50925D01AA3573A00321D00 /* Seru.xcdatamodeld */; };
 		B50925D71AA3573A00321D00 /* StackTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50925D31AA3573A00321D00 /* StackTest.swift */; };
 		B50925D91AA3576A00321D00 /* Seru.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B50925911AA354E800321D00 /* Seru.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -20,6 +18,7 @@
 		B583540A1AA3823200DD3E22 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354061AA3823200DD3E22 /* Stack.swift */; };
 		B583540B1AA3823200DD3E22 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354071AA3823200DD3E22 /* StackConfig.swift */; };
 		B583540C1AA3823200DD3E22 /* Seru.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58354081AA3823200DD3E22 /* Seru.swift */; };
+		B58D5AE51AA61C1F00DFC880 /* Sweet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50925BF1AA356D300321D00 /* Sweet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B50925C11AA356D800321D00 /* Sweet.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50925C01AA356D300321D00 /* Sweet.framework in Frameworks */,
+				B58D5AE51AA61C1F00DFC880 /* Sweet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +190,7 @@
 				B509258E1AA354E800321D00 /* Headers */,
 				B509258F1AA354E800321D00 /* Resources */,
 				B50925BD1AA355CC00321D00 /* CopyFiles */,
+				B58D5AE61AA61D6400DFC880 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -272,6 +271,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B58D5AE61AA61D6400DFC880 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Sweet.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B509258C1AA354E800321D00 /* Sources */ = {
@@ -449,6 +466,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SeruTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -463,6 +481,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SeruTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

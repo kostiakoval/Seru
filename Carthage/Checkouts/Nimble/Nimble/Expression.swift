@@ -16,24 +16,21 @@ public struct Expression<T> {
     internal let _expression: (Bool) -> T?
     internal let _withoutCaching: Bool
     public let location: SourceLocation
-    public let isClosure: Bool
 
-    public init(expression: () -> T?, location: SourceLocation, isClosure: Bool = false) {
+    public init(expression: () -> T?, location: SourceLocation) {
         self._expression = memoizedClosure(expression)
         self.location = location
         self._withoutCaching = false
-        self.isClosure = isClosure
     }
 
-    public init(memoizedExpression: (Bool) -> T?, location: SourceLocation, withoutCaching: Bool, isClosure: Bool = false) {
+    public init(memoizedExpression: (Bool) -> T?, location: SourceLocation, withoutCaching: Bool) {
         self._expression = memoizedExpression
         self.location = location
         self._withoutCaching = withoutCaching
-        self.isClosure = isClosure
     }
 
     public func cast<U>(block: (T?) -> U?) -> Expression<U> {
-        return Expression<U>(expression: ({ block(self.evaluate()) }), location: self.location, isClosure: self.isClosure)
+        return Expression<U>(expression: ({ block(self.evaluate()) }), location: self.location)
     }
 
     public func evaluate() -> T? {
@@ -41,6 +38,6 @@ public struct Expression<T> {
     }
 
     public func withoutCaching() -> Expression<T> {
-        return Expression(memoizedExpression: self._expression, location: location, withoutCaching: true, isClosure: isClosure)
+        return Expression(memoizedExpression: self._expression, location: location, withoutCaching: true)
     }
 }

@@ -5,7 +5,7 @@ internal func identityAsString(value: AnyObject?) -> String {
     if value == nil {
         return "nil"
     }
-    return NSString(format: "<%p>", unsafeBitCast(value!, Int.self)).description
+    return NSString(format: "<%p>", unsafeBitCast(value!, Int.self))
 }
 
 internal func arrayAsString<T>(items: [T], joiner: String = ", ") -> String {
@@ -41,8 +41,8 @@ extension NSArray : NMBStringer {
 }
 
 internal func stringify<T>(value: T) -> String {
-    if let value = value as? Double {
-        return NSString(format: "%.4f", (value)).description
+    if value is Double {
+        return NSString(format: "%.4f", (value as Double))
     }
     return toString(value)
 }
