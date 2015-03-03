@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Seru:
-    :commit: 8b73ca7c87e9d84fdbd8f35765b15f59e84b4f6e
+    :commit: e0ff9d8aaacaa57bae945586694930c869cc511c
     :git: https://github.com/kostiakoval/Seru.git
 
 SPEC CHECKSUMS:
