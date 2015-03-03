@@ -21,9 +21,10 @@
   },
   "source_files": [
     "Seru/Source",
-    "Seru/Source/**/*.{h,m}"
+    "Seru/Source/**/*.{swift}"
   ],
   "requires_arc": true,
-  "frameworks": "Foundation",
-  "vendored_frameworks": "Carthage/Build/iOS/Sweet.framework"
+  "ios": {
+    "vendored_frameworks": "Carthage/Build/iOS/Sweet.framework"
+  }
 }

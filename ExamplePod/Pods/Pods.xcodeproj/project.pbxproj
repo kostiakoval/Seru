@@ -7,231 +7,249 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C78FFF925C16C3A5E7E131 /* Pods-Seru-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CC8B21B6A171CE592EB96BA /* Pods-Seru-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		071123085AE3686D6BCCB365 /* Pods-Seru-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C773A8A1EA2C143E87F6B5 /* Pods-Seru-dummy.m */; };
-		0FAB2F3F5C44D7BD6F3BAB7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454198EA0E1268A8FD342D3A /* Foundation.framework */; };
-		1646537B40DB0F7A897CDC5D /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ECCF05DEE22C8168AAE4E4 /* Pods-dummy.m */; };
-		3E8063D8252F570A5313A172 /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B04D6DE608798C8E45FC9 /* StackConfig.swift */; };
-		4169D77C9FA1F7DA365F40FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454198EA0E1268A8FD342D3A /* Foundation.framework */; };
-		538A4DC3CA26C0E989AF91E9 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF1DEBDBBC3E0EA580829FE /* Stack.swift */; };
-		793C41A2BAD7F7795CB6C358 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776581499073A77ED98DD5C /* ErrorHandler.swift */; };
-		8CEF1E57536213D445EAA991 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB88EFFE03752CCF7687235 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C75D99AFEDD3382A77745249 /* Seru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369E5864CF1658B3A362171 /* Seru.swift */; };
+		0A7B56767C54E45B41B6EE1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F1447D9F8C8BCDFAF3E3D1 /* Foundation.framework */; };
+		1BD38AF27683ADCBF12259E9 /* Pods-Seru-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E9ECB1553E0C87657B589F /* Pods-Seru-dummy.m */; };
+		1D6E103CD47F56A5279DB6E0 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1957FCD8D9E657E39A7EDAFB /* ErrorHandler.swift */; };
+		43787D71F53F064A2C154188 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F1447D9F8C8BCDFAF3E3D1 /* Foundation.framework */; };
+		4F03EC283E335E9F5E258320 /* Seru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6FB91E18878F0FDAAAE388 /* Seru.swift */; };
+		88268E320B8CF7FAB5DFAC11 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A73125B4C3997535128A7B /* Pods-dummy.m */; };
+		8B1DD3A7799639C19CF1C0A3 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C33283383E5DF530F561FC0 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A791D005AEB84F1DB4314870 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF587E5406C4BF5BAA405062 /* Stack.swift */; };
+		B431C47E916BA42DABDFFB6D /* Pods-Seru-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA39681D9B0AB4DC6E52B88 /* Pods-Seru-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDECD26B01D50C6734F9E5CE /* StackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1916E9FAD4B2944E6849D8BD /* StackConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AC53C24C45B6CD0D15B8BA26 /* PBXContainerItemProxy */ = {
+		7F77E0EE25EA92BD35C1B88A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 15276FD8FCC5149B9E98E0D6 /* Project object */;
+			containerPortal = 1A5C8774FF96A107AE1B6B8D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 35C7AF4C14152D5260E6E34C;
+			remoteGlobalIDString = 87E0C5403D995CC15849FAAB;
 			remoteInfo = "Pods-Seru";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		155DD3DE8AB85F9BD1B06E8E /* Pods-Seru.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Seru.xcconfig"; sourceTree = "<group>"; };
-		25164B71BED0FFD3BCECBFCE /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		2E80325BB168020A72DCE021 /* Seru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3042FF06598AC0C3C5BE19F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B0E83D6A99B54F4CA76CFD8 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		4369E5864CF1658B3A362171 /* Seru.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Seru.swift; sourceTree = "<group>"; };
-		454198EA0E1268A8FD342D3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4CC8B21B6A171CE592EB96BA /* Pods-Seru-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Seru-umbrella.h"; sourceTree = "<group>"; };
-		5790D4388097139A699CC41B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		59E61E38A2793E8C8F2C3652 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59ECCF05DEE22C8168AAE4E4 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		601B04D6DE608798C8E45FC9 /* StackConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
-		6BF1DEBDBBC3E0EA580829FE /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		7BE917ACCD994C92C0A84954 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		83DC3423A06A3117A4406CD8 /* Pods-Seru-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Seru-Private.xcconfig"; sourceTree = "<group>"; };
-		8890B396A237FAEC0651C055 /* Pods-Seru-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Seru-prefix.pch"; sourceTree = "<group>"; };
-		907D22299E315CA655C7D715 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
-		910B240C30EC88985E2C3686 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		A2C773A8A1EA2C143E87F6B5 /* Pods-Seru-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Seru-dummy.m"; sourceTree = "<group>"; };
-		A7E9DB23E1E05F28D48944D5 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		B776581499073A77ED98DD5C /* ErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		BCF895B79A6F46DA03AE6F3F /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C18C4D050097AA6239A2C95D /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CC3FC305F73FEF20CAB1A40C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3D391D0715BD7FE2F85B16D /* Pods-Seru.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Seru.modulemap"; sourceTree = "<group>"; };
-		EDD00A189463E13BEA9814CF /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FEB88EFFE03752CCF7687235 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		0C33283383E5DF530F561FC0 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		0F2A0B60C34E41125A8F7A4A /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		1916E9FAD4B2944E6849D8BD /* StackConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StackConfig.swift; sourceTree = "<group>"; };
+		1957FCD8D9E657E39A7EDAFB /* ErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		1E6FB91E18878F0FDAAAE388 /* Seru.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Seru.swift; sourceTree = "<group>"; };
+		2E846FA3525BF8A7A6CE71DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		363F8771E533D874A9E3CCF3 /* Pods-Seru-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Seru-prefix.pch"; sourceTree = "<group>"; };
+		3F341A18FDAFB0059119D0B8 /* Pods-Seru-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Seru-Private.xcconfig"; sourceTree = "<group>"; };
+		50F1447D9F8C8BCDFAF3E3D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		531EAFCCB32D61D834B80E69 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		618F7F0388253243D9F5CF79 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		6BA39681D9B0AB4DC6E52B88 /* Pods-Seru-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Seru-umbrella.h"; sourceTree = "<group>"; };
+		70494A7ED13AE855747AB471 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857FD58DB3E5490E8056E279 /* Sweet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sweet.framework; path = Carthage/Build/iOS/Sweet.framework; sourceTree = "<group>"; };
+		8BC913EFD38FC38048D9A36E /* Pods-Seru.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Seru.xcconfig"; sourceTree = "<group>"; };
+		992818F430512E0494DD953C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C6B46A80534FCA28A01B629 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		A1A73125B4C3997535128A7B /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		B7B0A4AE11969DE2F32D23DD /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		BF587E5406C4BF5BAA405062 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		C418B94DAFAC8ACB950452B3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		C67928D6D5656D3ED9F74924 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		D0E9ECB1553E0C87657B589F /* Pods-Seru-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Seru-dummy.m"; sourceTree = "<group>"; };
+		D19E15274BB083D5175BEB76 /* Pods-Seru.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Seru.modulemap"; sourceTree = "<group>"; };
+		D33ED4CEE31634CB200FA01D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D36AEDF9451271A7331332B7 /* Seru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B6EFAAB462EB66190DABD9 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0463EC11956149AA24387A6D /* Frameworks */ = {
+		0CB9261AB2DE3ED204AEC95D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4169D77C9FA1F7DA365F40FA /* Foundation.framework in Frameworks */,
+				43787D71F53F064A2C154188 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C932C1964B0C1E6A89D8A7CF /* Frameworks */ = {
+		92F4296176404804E72C9721 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FAB2F3F5C44D7BD6F3BAB7A /* Foundation.framework in Frameworks */,
+				0A7B56767C54E45B41B6EE1E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01FF7E70DDB3CA7F13111DC9 /* Products */ = {
+		04D1658A924A1B9D27830444 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59E61E38A2793E8C8F2C3652 /* Pods.framework */,
-				2E80325BB168020A72DCE021 /* Seru.framework */,
+				992818F430512E0494DD953C /* Pods.framework */,
+				D36AEDF9451271A7331332B7 /* Seru.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F290B445819FD190F05F20E /* Development Pods */ = {
+		168C0DDDBDA6705F3584A92C /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				89952C830766815D6AD1D7DA /* Seru */,
+				17FCB57C1591BA1923B0BBF0 /* Seru */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		65793FB88759ADAE46703016 /* Support Files */ = {
+		17FCB57C1591BA1923B0BBF0 /* Seru */ = {
 			isa = PBXGroup;
 			children = (
-				3042FF06598AC0C3C5BE19F0 /* Info.plist */,
-				E3D391D0715BD7FE2F85B16D /* Pods-Seru.modulemap */,
-				155DD3DE8AB85F9BD1B06E8E /* Pods-Seru.xcconfig */,
-				83DC3423A06A3117A4406CD8 /* Pods-Seru-Private.xcconfig */,
-				A2C773A8A1EA2C143E87F6B5 /* Pods-Seru-dummy.m */,
-				8890B396A237FAEC0651C055 /* Pods-Seru-prefix.pch */,
-				4CC8B21B6A171CE592EB96BA /* Pods-Seru-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "ExamplePod/Pods/Target Support Files/Pods-Seru";
-			sourceTree = "<group>";
-		};
-		66696EA6A2101F3F950AFF12 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EF98AA5E3AEF34BE26D5CB68 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		86612C42A9E440ED6A02956B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				907D22299E315CA655C7D715 /* Sweet.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		89952C830766815D6AD1D7DA /* Seru */ = {
-			isa = PBXGroup;
-			children = (
-				86612C42A9E440ED6A02956B /* Frameworks */,
-				EC4522ED6586F9BDE8692BD6 /* Seru */,
-				65793FB88759ADAE46703016 /* Support Files */,
+				EF02BBDF423715F1D6939E1B /* Frameworks */,
+				F4E7151745731EE1071A683F /* Seru */,
+				CC7671263A53E9D00DD22969 /* Support Files */,
 			);
 			name = Seru;
 			path = /Users/konstantin/My_Projects/MyPods/Seru;
 			sourceTree = "<absolute>";
 		};
-		B0A7A2CF0E358593E35DFAD2 /* Pods */ = {
+		46EB97BF8E6134086FA36E70 = {
 			isa = PBXGroup;
 			children = (
-				CC3FC305F73FEF20CAB1A40C /* Info.plist */,
-				7BE917ACCD994C92C0A84954 /* Pods.modulemap */,
-				BCF895B79A6F46DA03AE6F3F /* Pods-acknowledgements.markdown */,
-				25164B71BED0FFD3BCECBFCE /* Pods-acknowledgements.plist */,
-				59ECCF05DEE22C8168AAE4E4 /* Pods-dummy.m */,
-				A7E9DB23E1E05F28D48944D5 /* Pods-environment.h */,
-				3B0E83D6A99B54F4CA76CFD8 /* Pods-frameworks.sh */,
-				C18C4D050097AA6239A2C95D /* Pods-resources.sh */,
-				FEB88EFFE03752CCF7687235 /* Pods-umbrella.h */,
-				5790D4388097139A699CC41B /* Pods.debug.xcconfig */,
-				910B240C30EC88985E2C3686 /* Pods.release.xcconfig */,
+				531EAFCCB32D61D834B80E69 /* Podfile */,
+				168C0DDDBDA6705F3584A92C /* Development Pods */,
+				B153A1149FB148F7DB9A99E3 /* Frameworks */,
+				04D1658A924A1B9D27830444 /* Products */,
+				CCE0FE9C14DDF21234485843 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		5BDEF1BD434449E6A6700077 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1957FCD8D9E657E39A7EDAFB /* ErrorHandler.swift */,
+				1E6FB91E18878F0FDAAAE388 /* Seru.swift */,
+				BF587E5406C4BF5BAA405062 /* Stack.swift */,
+				1916E9FAD4B2944E6849D8BD /* StackConfig.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8C317265595B62758DDB5BA9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				50F1447D9F8C8BCDFAF3E3D1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B153A1149FB148F7DB9A99E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C317265595B62758DDB5BA9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD1D8D07921659F4DF109E12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D33ED4CEE31634CB200FA01D /* Info.plist */,
+				0F2A0B60C34E41125A8F7A4A /* Pods.modulemap */,
+				D3B6EFAAB462EB66190DABD9 /* Pods-acknowledgements.markdown */,
+				B7B0A4AE11969DE2F32D23DD /* Pods-acknowledgements.plist */,
+				A1A73125B4C3997535128A7B /* Pods-dummy.m */,
+				C67928D6D5656D3ED9F74924 /* Pods-environment.h */,
+				9C6B46A80534FCA28A01B629 /* Pods-frameworks.sh */,
+				618F7F0388253243D9F5CF79 /* Pods-resources.sh */,
+				0C33283383E5DF530F561FC0 /* Pods-umbrella.h */,
+				C418B94DAFAC8ACB950452B3 /* Pods.debug.xcconfig */,
+				2E846FA3525BF8A7A6CE71DF /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		BE6421F0B7D9DED5A5F433AA = {
+		CC7671263A53E9D00DD22969 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EDD00A189463E13BEA9814CF /* Podfile */,
-				3F290B445819FD190F05F20E /* Development Pods */,
-				66696EA6A2101F3F950AFF12 /* Frameworks */,
-				01FF7E70DDB3CA7F13111DC9 /* Products */,
-				CA10B718CEEC88D35A4E0FEE /* Targets Support Files */,
+				70494A7ED13AE855747AB471 /* Info.plist */,
+				D19E15274BB083D5175BEB76 /* Pods-Seru.modulemap */,
+				8BC913EFD38FC38048D9A36E /* Pods-Seru.xcconfig */,
+				3F341A18FDAFB0059119D0B8 /* Pods-Seru-Private.xcconfig */,
+				D0E9ECB1553E0C87657B589F /* Pods-Seru-dummy.m */,
+				363F8771E533D874A9E3CCF3 /* Pods-Seru-prefix.pch */,
+				6BA39681D9B0AB4DC6E52B88 /* Pods-Seru-umbrella.h */,
 			);
+			name = "Support Files";
+			path = "ExamplePod/Pods/Target Support Files/Pods-Seru";
 			sourceTree = "<group>";
 		};
-		CA10B718CEEC88D35A4E0FEE /* Targets Support Files */ = {
+		CCE0FE9C14DDF21234485843 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0A7A2CF0E358593E35DFAD2 /* Pods */,
+				BD1D8D07921659F4DF109E12 /* Pods */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D52FE14F1B7FFA55F2667146 /* Source */ = {
+		EF02BBDF423715F1D6939E1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B776581499073A77ED98DD5C /* ErrorHandler.swift */,
-				4369E5864CF1658B3A362171 /* Seru.swift */,
-				6BF1DEBDBBC3E0EA580829FE /* Stack.swift */,
-				601B04D6DE608798C8E45FC9 /* StackConfig.swift */,
+				857FD58DB3E5490E8056E279 /* Sweet.framework */,
 			);
-			path = Source;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EC4522ED6586F9BDE8692BD6 /* Seru */ = {
+		F4E7151745731EE1071A683F /* Seru */ = {
 			isa = PBXGroup;
 			children = (
-				D52FE14F1B7FFA55F2667146 /* Source */,
+				5BDEF1BD434449E6A6700077 /* Source */,
 			);
 			path = Seru;
-			sourceTree = "<group>";
-		};
-		EF98AA5E3AEF34BE26D5CB68 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				454198EA0E1268A8FD342D3A /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		00EFF60EBC9A573DBABE12C8 /* Headers */ = {
+		A4206E8EFC5A2F3C65CD6A6E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C78FFF925C16C3A5E7E131 /* Pods-Seru-umbrella.h in Headers */,
+				B431C47E916BA42DABDFFB6D /* Pods-Seru-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		192B5B009A886457BEEC34AD /* Headers */ = {
+		B2EA79C2BD9EF40CFF44ECFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CEF1E57536213D445EAA991 /* Pods-umbrella.h in Headers */,
+				8B1DD3A7799639C19CF1C0A3 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		35C7AF4C14152D5260E6E34C /* Pods-Seru */ = {
+		7FD5A1E5930EC3CBCA2F6449 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22E67F48E50C7B571FD0A40B /* Build configuration list for PBXNativeTarget "Pods-Seru" */;
+			buildConfigurationList = B1FF27296D48691C57863EDB /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				0D9B9FA7A8E53B3B32F05B68 /* Sources */,
-				C932C1964B0C1E6A89D8A7CF /* Frameworks */,
-				00EFF60EBC9A573DBABE12C8 /* Headers */,
+				2A405753C6596DAD00ADFC8F /* Sources */,
+				0CB9261AB2DE3ED204AEC95D /* Frameworks */,
+				B2EA79C2BD9EF40CFF44ECFF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D778B1D4107036C39FC182D7 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 992818F430512E0494DD953C /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		87E0C5403D995CC15849FAAB /* Pods-Seru */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D341A74B31371E8E19743D6 /* Build configuration list for PBXNativeTarget "Pods-Seru" */;
+			buildPhases = (
+				D64B6A80224DE961D33E26F2 /* Sources */,
+				92F4296176404804E72C9721 /* Frameworks */,
+				A4206E8EFC5A2F3C65CD6A6E /* Headers */,
 			);
 			buildRules = (
 			);
@@ -239,121 +257,69 @@
 			);
 			name = "Pods-Seru";
 			productName = "Pods-Seru";
-			productReference = 2E80325BB168020A72DCE021 /* Seru.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		54FE3E4C7F9B2BAB7B7C44DB /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 678BDCCC23C07DB3BFAE1FA2 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				1B322F28ECD756EADFCEC7CF /* Sources */,
-				0463EC11956149AA24387A6D /* Frameworks */,
-				192B5B009A886457BEEC34AD /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61D69583814F6D37A298A15E /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 59E61E38A2793E8C8F2C3652 /* Pods.framework */;
+			productReference = D36AEDF9451271A7331332B7 /* Seru.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		15276FD8FCC5149B9E98E0D6 /* Project object */ = {
+		1A5C8774FF96A107AE1B6B8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = EC9C07B728B7D95590C6B5CE /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = BF555BA730FAD56EA3EF0E02 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = BE6421F0B7D9DED5A5F433AA;
-			productRefGroup = 01FF7E70DDB3CA7F13111DC9 /* Products */;
+			mainGroup = 46EB97BF8E6134086FA36E70;
+			productRefGroup = 04D1658A924A1B9D27830444 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54FE3E4C7F9B2BAB7B7C44DB /* Pods */,
-				35C7AF4C14152D5260E6E34C /* Pods-Seru */,
+				7FD5A1E5930EC3CBCA2F6449 /* Pods */,
+				87E0C5403D995CC15849FAAB /* Pods-Seru */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D9B9FA7A8E53B3B32F05B68 /* Sources */ = {
+		2A405753C6596DAD00ADFC8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				793C41A2BAD7F7795CB6C358 /* ErrorHandler.swift in Sources */,
-				071123085AE3686D6BCCB365 /* Pods-Seru-dummy.m in Sources */,
-				C75D99AFEDD3382A77745249 /* Seru.swift in Sources */,
-				538A4DC3CA26C0E989AF91E9 /* Stack.swift in Sources */,
-				3E8063D8252F570A5313A172 /* StackConfig.swift in Sources */,
+				88268E320B8CF7FAB5DFAC11 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B322F28ECD756EADFCEC7CF /* Sources */ = {
+		D64B6A80224DE961D33E26F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1646537B40DB0F7A897CDC5D /* Pods-dummy.m in Sources */,
+				1D6E103CD47F56A5279DB6E0 /* ErrorHandler.swift in Sources */,
+				1BD38AF27683ADCBF12259E9 /* Pods-Seru-dummy.m in Sources */,
+				4F03EC283E335E9F5E258320 /* Seru.swift in Sources */,
+				A791D005AEB84F1DB4314870 /* Stack.swift in Sources */,
+				BDECD26B01D50C6734F9E5CE /* StackConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		61D69583814F6D37A298A15E /* PBXTargetDependency */ = {
+		D778B1D4107036C39FC182D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Seru";
-			target = 35C7AF4C14152D5260E6E34C /* Pods-Seru */;
-			targetProxy = AC53C24C45B6CD0D15B8BA26 /* PBXContainerItemProxy */;
+			target = 87E0C5403D995CC15849FAAB /* Pods-Seru */;
+			targetProxy = 7F77E0EE25EA92BD35C1B88A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		325E0CE55AC637AE7D19FF40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		395B38832FEE78409475F67D /* Debug */ = {
+		2149E2A45D0B9AFE6B083432 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -392,9 +358,99 @@
 			};
 			name = Debug;
 		};
-		A20CDC8FC621E0BC1C3E4A52 /* Release */ = {
+		27A03FE0AB067DB94079FE7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 910B240C30EC88985E2C3686 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF5FF5C444BE1158843421A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F341A18FDAFB0059119D0B8 /* Pods-Seru-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Seru/Pods-Seru-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Seru/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Seru/Pods-Seru.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Seru;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B307618A691F80461A85E70D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C418B94DAFAC8ACB950452B3 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C97A0A2A8B120ACBEB50191C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E846FA3525BF8A7A6CE71DF /* Pods.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -421,9 +477,9 @@
 			};
 			name = Release;
 		};
-		AF262A2B3AAF0BC8B66E93D9 /* Debug */ = {
+		FB98C09B1893E22476670290 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83DC3423A06A3117A4406CD8 /* Pods-Seru-Private.xcconfig */;
+			baseConfigurationReference = 3F341A18FDAFB0059119D0B8 /* Pods-Seru-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -447,94 +503,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		B72D49B4E6CDDF3FCBB18A0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5790D4388097139A699CC41B /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EAF2F45EF0A3C1845E931519 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83DC3423A06A3117A4406CD8 /* Pods-Seru-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Seru/Pods-Seru-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-Seru/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Seru/Pods-Seru.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Seru;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22E67F48E50C7B571FD0A40B /* Build configuration list for PBXNativeTarget "Pods-Seru" */ = {
+		1D341A74B31371E8E19743D6 /* Build configuration list for PBXNativeTarget "Pods-Seru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF262A2B3AAF0BC8B66E93D9 /* Debug */,
-				EAF2F45EF0A3C1845E931519 /* Release */,
+				FB98C09B1893E22476670290 /* Debug */,
+				AF5FF5C444BE1158843421A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		678BDCCC23C07DB3BFAE1FA2 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		B1FF27296D48691C57863EDB /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B72D49B4E6CDDF3FCBB18A0C /* Debug */,
-				A20CDC8FC621E0BC1C3E4A52 /* Release */,
+				B307618A691F80461A85E70D /* Debug */,
+				C97A0A2A8B120ACBEB50191C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC9C07B728B7D95590C6B5CE /* Build configuration list for PBXProject "Pods" */ = {
+		BF555BA730FAD56EA3EF0E02 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				395B38832FEE78409475F67D /* Debug */,
-				325E0CE55AC637AE7D19FF40 /* Release */,
+				2149E2A45D0B9AFE6B083432 /* Debug */,
+				27A03FE0AB067DB94079FE7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 15276FD8FCC5149B9E98E0D6 /* Project object */;
+	rootObject = 1A5C8774FF96A107AE1B6B8D /* Project object */;
 }

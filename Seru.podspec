@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/kostiakoval/Seru.git", :tag => s.version }
 
-  s.source_files  = "Seru/Source", "Seru/Source/**/*.{h,m}"
+  s.source_files  = "Seru/Source", "Seru/Source/**/*.{swift}"
   s.requires_arc = true
-  s.framework  = "Foundation"
-  s.vendored_frameworks = "Carthage/Build/iOS/Sweet.framework"
+  s.ios.vendored_frameworks = 'Carthage/Build/iOS/Sweet.framework'
+  
 end
