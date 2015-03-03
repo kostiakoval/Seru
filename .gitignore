@@ -3,7 +3,9 @@
 ### Objective-C ###
 # Xcode
 #
-build/
+
+#build/ It’s conflicting with Carthage
+
 *.pbxuser
 !default.pbxuser
 *.mode1v3

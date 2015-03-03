@@ -1,0 +1,10 @@
+framework module Sweet {
+  umbrella header "Sweet.h"
+
+  export *
+  module * { export * }
+}
+
+module Sweet.Swift {
+    header "Sweet-Swift.h"
+}
