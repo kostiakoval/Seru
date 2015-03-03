@@ -12,11 +12,11 @@ import XCTest
 import Seru
 
 class SeruStackTest: XCTestCase {
-  var stack: PersistenceStack!
+  var stack: Seru!
   
   override func setUp() {
     super.setUp()
-    stack = PersistenceStack(name: "Seru", modelLocation:.AllMainBundles)
+    stack = Seru(name: "Seru", modelLocation:.AllMainBundles)
   }
   
   override func tearDown() {
