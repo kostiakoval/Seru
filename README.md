@@ -3,6 +3,8 @@ Seru (セル)
 [![Build Status](https://travis-ci.org/kostiakoval/Seru.svg?branch=develop)](https://travis-ci.org/kostiakoval/Seru) 
 [![CocoaPods](https://img.shields.io/cocoapods/v/Seru.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/cocoapods/l/Seru.svg?style=flat)](http://cocoadocs.org/docsets/Seru)
+[![Platform](https://img.shields.io/cocoapods/p/Seru.svg?style=flat)](http://cocoadocs.org/docsets/Seru)
 
 ##Core Data in Swift.
 
