@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode61
+podfile: Test/Podfile
 
 before_install:
 - git submodule update --init --recursive
