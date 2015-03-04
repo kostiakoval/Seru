@@ -6,5 +6,5 @@ before_install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild -project Seru.xcodeproj -scheme Seru build test | xcpretty -c; exit ${PIPESTATUS[0]}
+- xcodebuild -project Seru.xcworkspace -scheme SeruTests build test | xcpretty -c; exit ${PIPESTATUS[0]}
 - pod lib lint --quick
