@@ -25,9 +25,9 @@ public class Seru {
     self.stack = stack
     errorHandler = ErrorHandler()
   }
-
-  public convenience init() {
-    self.init(stack: BaseStack())
+  
+  public convenience init(name:String = AppInfo.productName, bundle: NSBundle = NSBundle.mainBundle(), type: StoreType = .SQLite, location: StoreLocation = .PrivateFolder) {
+    self.init(stack: BaseStack(name: name, bundle: bundle, type: type, location: location))
   }
   
 //MARK: - Functionalioty 
