@@ -11,5 +11,5 @@ before_install:
 
 script:
 - set -o pipefail
-- xcodebuild test -workspace Example/SeruDemo.xcworkspace -scheme SeruDemo | xcpretty -c
+- xcodebuild test -workspace Example/SeruDemo.xcworkspace -scheme SeruDemo -sdk iphonesimulator | xcpretty -c
 - pod lib lint --quick
