@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Seru"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Seru is Simple Core Data stack"
   s.description  = <<-DESC
                    Seru is Swift framework for working wit Core Data. It setup your core data stack and 
