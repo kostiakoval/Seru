@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		01988E8B879CA5C67806942E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B05AA85B55017405090D320 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0DB04FB83F8DF4CC10B0679A /* Pods_SeruDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A564901B63507AC3C685F53 /* Pods_SeruDemoTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B50A3E7B1AA78FBD00B85E63 /* SeruDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B50A3E791AA78FBD00B85E63 /* SeruDemo.xcdatamodeld */; };
+		B50A3E7D1AA78FDF00B85E63 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A3E7C1AA78FDF00B85E63 /* DetailViewController.swift */; };
 		B53D84271AA78A8700D3BE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D84261AA78A8700D3BE7C /* AppDelegate.swift */; };
 		B53D84291AA78A8700D3BE7C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D84281AA78A8700D3BE7C /* MasterViewController.swift */; };
-		B53D842B1AA78A8700D3BE7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D842A1AA78A8700D3BE7C /* DetailViewController.swift */; };
 		B53D842E1AA78A8700D3BE7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53D842C1AA78A8700D3BE7C /* Main.storyboard */; };
 		B53D84301AA78A8700D3BE7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53D842F1AA78A8700D3BE7C /* Images.xcassets */; };
 		B53D84331AA78A8700D3BE7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53D84311AA78A8700D3BE7C /* LaunchScreen.xib */; };
@@ -35,11 +36,12 @@
 		9A564901B63507AC3C685F53 /* Pods_SeruDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeruDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB1507B514F952A9D491C59 /* Pods-SeruDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeruDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeruDemoTests/Pods-SeruDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E168A0C1CC7D7A3F483200 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B50A3E7A1AA78FBD00B85E63 /* SeruDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeruDemo.xcdatamodel; sourceTree = "<group>"; };
+		B50A3E7C1AA78FDF00B85E63 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B53D84211AA78A8700D3BE7C /* SeruDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeruDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53D84251AA78A8700D3BE7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53D84261AA78A8700D3BE7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B53D84281AA78A8700D3BE7C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		B53D842A1AA78A8700D3BE7C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B53D842D1AA78A8700D3BE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B53D842F1AA78A8700D3BE7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B53D84321AA78A8700D3BE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -115,9 +117,10 @@
 		B53D84231AA78A8700D3BE7C /* SeruDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B50A3E791AA78FBD00B85E63 /* SeruDemo.xcdatamodeld */,
 				B53D84261AA78A8700D3BE7C /* AppDelegate.swift */,
 				B53D84281AA78A8700D3BE7C /* MasterViewController.swift */,
-				B53D842A1AA78A8700D3BE7C /* DetailViewController.swift */,
+				B50A3E7C1AA78FDF00B85E63 /* DetailViewController.swift */,
 				B53D842C1AA78A8700D3BE7C /* Main.storyboard */,
 				B53D842F1AA78A8700D3BE7C /* Images.xcassets */,
 				B53D84311AA78A8700D3BE7C /* LaunchScreen.xib */,
@@ -360,9 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B53D842B1AA78A8700D3BE7C /* DetailViewController.swift in Sources */,
 				B53D84291AA78A8700D3BE7C /* MasterViewController.swift in Sources */,
+				B50A3E7B1AA78FBD00B85E63 /* SeruDemo.xcdatamodeld in Sources */,
 				B53D84271AA78A8700D3BE7C /* AppDelegate.swift in Sources */,
+				B50A3E7D1AA78FDF00B85E63 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +576,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B50A3E791AA78FBD00B85E63 /* SeruDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B50A3E7A1AA78FBD00B85E63 /* SeruDemo.xcdatamodel */,
+			);
+			currentVersion = B50A3E7A1AA78FBD00B85E63 /* SeruDemo.xcdatamodel */;
+			path = SeruDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B53D84191AA78A8700D3BE7C /* Project object */;
 }
