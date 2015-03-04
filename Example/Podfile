@@ -4,11 +4,10 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-target 'Seru', :exclusive => true do
-  pod "Seru", :path => "../"
-end
+pod "Seru", :path => "../"
 
-target 'SeruTests', :exclusive => true do
-  pod "Seru", :path => "../"
+target 'SeruDemoTests' do
+
   pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git', :branch => 'swift-1.1'
+  
 end

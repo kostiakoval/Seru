@@ -39,7 +39,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   func insertNewObject(sender: AnyObject) {
     
     seruStack.performBackgroundSave({ context in
-      var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! NSManagedObject
+      var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as NSManagedObject
       object.setValue(NSDate(), forKey: "time")
     
     },completion: { completed in
@@ -54,7 +54,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
     configureCell(cell, atIndexPath: indexPath)
     return cell
   }
