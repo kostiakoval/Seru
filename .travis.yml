@@ -2,8 +2,10 @@ language: objective-c
 osx_image: xcode61
 podfile: Test/Podfile
 
+cache: cocoapods
+
 before_install:
-- gem gem install cocoapods --pre
+- gem install cocoapods --pre
 - git submodule update --init --recursive
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
