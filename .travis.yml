@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode61
-podfile: Test/Podfile
+podfile: Example/Podfile
 
 cache: cocoapods
 
@@ -11,5 +11,5 @@ before_install:
 
 script:
 - set -o pipefail
-- xcodebuild test -workspace Seru.xcworkspace -scheme SeruTests | xcpretty -c
+- xcodebuild test -workspace Example/SeruDemo.xcworkspace -scheme SeruDemo | xcpretty -c
 - pod lib lint --quick

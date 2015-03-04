@@ -47,6 +47,9 @@
 		B53D84091AA7879100D3BE7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B53D840A1AA7879100D3BE7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53D840B1AA7879100D3BE7C /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B53D84151AA7885C00D3BE7C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B53D84161AA7885C00D3BE7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B53D84171AA7885C00D3BE7C /* Seru.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = Seru.podspec; path = ../Seru.podspec; sourceTree = "<group>"; };
 		D7BED98312BCA68ED3697A7A /* Pods_SeruDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeruDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +85,7 @@
 		B52818481AA76F0E0096D738 = {
 			isa = PBXGroup;
 			children = (
+				B53D84141AA7884300D3BE7C /* Podspec Metadata */,
 				B53D84001AA7879100D3BE7C /* SeruExample */,
 				B528186B1AA76F0E0096D738 /* SeruTests */,
 				B52818521AA76F0E0096D738 /* Products */,
@@ -129,6 +133,16 @@
 				B53D840B1AA7879100D3BE7C /* MasterViewController.swift */,
 			);
 			path = SeruExample;
+			sourceTree = "<group>";
+		};
+		B53D84141AA7884300D3BE7C /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				B53D84151AA7885C00D3BE7C /* LICENSE */,
+				B53D84161AA7885C00D3BE7C /* README.md */,
+				B53D84171AA7885C00D3BE7C /* Seru.podspec */,
+			);
+			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 		DE025096B943499B302A3746 /* Pods */ = {

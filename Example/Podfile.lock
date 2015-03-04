@@ -4,19 +4,23 @@ PODS:
 
 DEPENDENCIES:
   - Nimble (from `https://github.com/Quick/Nimble.git`, branch `swift-1.1`)
-  - Seru (from `../`)
+  - Seru (from `https://github.com/kostiakoval/Seru.git`, branch `feature/project_structure`)
 
 EXTERNAL SOURCES:
   Nimble:
     :branch: swift-1.1
     :git: https://github.com/Quick/Nimble.git
   Seru:
-    :path: ../
+    :branch: feature/project_structure
+    :git: https://github.com/kostiakoval/Seru.git
 
 CHECKOUT OPTIONS:
   Nimble:
     :commit: 1088d5f70497f34be946e3e2829a10529f7bea8e
     :git: https://github.com/Quick/Nimble.git
+  Seru:
+    :commit: 1098d37234a5803fbbc5e1520c6440bb61937fbe
+    :git: https://github.com/kostiakoval/Seru.git
 
 SPEC CHECKSUMS:
   Nimble: 1b3c765852d63b9540a91e528e1e4f8afab79b6f
