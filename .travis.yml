@@ -6,9 +6,10 @@ cache: cocoapods
 
 before_install:
 - gem install cocoapods --pre
-- git submodule update --init --recursive
+#- git submodule update --init --recursive
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild -workspace Seru.xcworkspace -scheme SeruTests build test | xcpretty -c; exit ${PIPESTATUS[0]}
+- set -o pipefail
+- xcodebuild test -workspace Seru.xcworkspace -scheme SeruTests | xcpretty -c
 - pod lib lint --quick
