@@ -12,7 +12,7 @@ Seru is design to be light and fast and to fit all type of applications.
 **Use example**: Setup Core Data in **1** line of code `Seru()` 
 and insert object in background.
 
-```
+```swift
 let seru = Seru()
 
 seru.performBackgroundSave({ context in
