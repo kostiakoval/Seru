@@ -4,7 +4,8 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod "Seru", :git => "https://github.com/kostiakoval/Seru.git", :branch => "feature/project_structure" #:path => "../"
+#pod "Seru", :git => "https://github.com/kostiakoval/Seru.git", :branch => "feature/project_structure" #:path => "../"
+pod "Seru", :path => "../"
 
 target 'SeruDemoTests' do
 
