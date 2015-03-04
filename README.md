@@ -88,7 +88,7 @@ github "kostiakoval/Seru"
 mkdir Vendor # you can keep your submodules in their own directory
 git submodule add git@github.com:kostiakoval/Seru.git Vendor/Seru
 git submodule update --init --recursive
-``
+```
 
 ### TODO
 - [ ] CoreData Stack with background saving context
