@@ -4,8 +4,7 @@ Seru (セル)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Seru.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-### Core Data in Swift.
-----
+##Core Data in Swift.
 
 **Seru (Cell in Japanese)** is a clean and beautiful Core Data stack in Swift.  
 Seru is design to be light and fast and to fit all type of applications.  
