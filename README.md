@@ -51,9 +51,11 @@ seruStack.performInBackgroundContext { context in
 ##Installation
 
 ### CocoaPods
-Install latest version of cocoapods `[sudo] gem install cocoapods --pre`  
+Seru is available through [CocoaPods](http://cocoapods.org). To install :
 
-Podfile  
+ - Install latest version of cocoapods `[sudo] gem install cocoapods --pre`
+ - Add the following line to your Podfile:
+ 
 ```
 use_frameworks!
 pod 'Seru'
@@ -62,16 +64,22 @@ pod 'Seru'
 ### Carthage
 Installation is available using the dependency manager Carthage.
 
-Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
+ - Install Carthage `brew install carthage`
+ - Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) file
 
 ```
 github "kostiakoval/Seru"
 ```
-Then do `carthage update`. After that, add the framework to your project.
+-  Run `carthage update`
+-  Add Seru.framework (from Carthage/buid directory) to your project.
 
 ### Submodules
 
-Run `git submodule update`
+```
+mkdir Vendor # you can keep your submodules in their own directory
+git submodule add git@github.com:kostiakoval/Seru.git Vendor/Seru
+git submodule update --init --recursive
+``
 
 ### TODO
 - [ ] CoreData Stack with background saving context
@@ -82,8 +90,13 @@ Run `git submodule update`
 - [ ] Delete object
 
 
-# Author
+## Author
 
 Kostiantyn Koval  
 [@KostiaKoval](https://twitter.com/KostiaKoval)
+
+## License
+
+Seru is available under the MIT license. See the LICENSE file for more info.
+
 
