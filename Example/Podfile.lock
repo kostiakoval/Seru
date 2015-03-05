@@ -1,6 +1,6 @@
 PODS:
   - Nimble (0.3.1)
-  - Seru (0.0.3)
+  - Seru (0.0.4)
 
 DEPENDENCIES:
   - Nimble (from `https://github.com/Quick/Nimble.git`, branch `swift-1.1`)
@@ -20,6 +20,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Nimble: 1b3c765852d63b9540a91e528e1e4f8afab79b6f
-  Seru: 658adcf8651a1291474f95727c4b8e92363690a4
+  Seru: 21eadb1cc0328b86652ac4860bf31a313dea456e
 
 COCOAPODS: 0.36.0.rc.1

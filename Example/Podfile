@@ -4,6 +4,7 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
+#pod "Seru", '~> 0.0.4'
 #pod "Seru", :git => "https://github.com/kostiakoval/Seru.git", :branch => "feature/project_structure" #:path => "../"
 pod "Seru", :path => "../"
 
