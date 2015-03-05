@@ -19,14 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let viewController = (window?.rootViewController as UINavigationController).topViewController as MasterViewController
     viewController.seruStack = seruStack
-    
+   
+    /*
     //Different way to setup seru
     let seru1 = Seru(name: "Seru")
     var seru2 = Seru(bundle: NSBundle(forClass: AppDelegate.self))
     var seru3 = Seru(name: "Seru", bundle: NSBundle.mainBundle())
     var seru4 = Seru(name: "Seru", bundle: NSBundle.mainBundle(), type: .SQLite, location: .PrivateFolder)
     var seru5 = Seru(location: .SharedGroup("grop.myApp.data"))
-    
+    */
     return true
   }
   
