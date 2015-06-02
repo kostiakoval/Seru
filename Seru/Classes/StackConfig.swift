@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Sweet
 
 //MARK: - Model
 
@@ -17,7 +18,7 @@ func modelWithName(name: String, inBundle bundle: NSBundle) -> NSManagedObjectMo
       return model
     }
   }
-  assertionFailure("Model with name is not available")
+  fatalError("Model with name is not available")
 }
 
 //MARK: Store Coordinator
@@ -26,7 +27,7 @@ public enum StoreType {
   case SQLite
   case Binary
   case InMemory
-  
+
   public var coreDataType: String {
     switch self {
     case .SQLite: return NSSQLiteStoreType
@@ -43,9 +44,9 @@ public enum StoreLocation {
 
 
 func storeUrl(name: String, #type: StoreType, #location: StoreLocation) -> NSURL? {
-  
+
   switch (type, location) {
-    
+
   case (.Binary, .PrivateFolder):
     return NSURL.fileURLWithPath(FileHelper.filePath("\(name).data"))
   case (.SQLite, .PrivateFolder):

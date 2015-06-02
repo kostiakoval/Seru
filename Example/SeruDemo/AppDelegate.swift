@@ -11,15 +11,21 @@ import Seru
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
+
   var window: UIWindow?
   var seruStack = Seru()
-  
+
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    
-    let viewController = (window?.rootViewController as UINavigationController).topViewController as MasterViewController
+
+    let viewController = (window?.rootViewController as! UINavigationController).topViewController as! MasterViewController
     viewController.seruStack = seruStack
-   
+
+    let groupName = "my.group.com"
+    if let containerURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(groupName) {
+        let sqliteFile = containerURL.URLByAppendingPathComponent("myDB.slqlite")
+    }
+
+
     /*
     //Different way to setup seru
     let seru1 = Seru(name: "Seru")
@@ -30,11 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     */
     return true
   }
-  
+
   func applicationDidEnterBackground(application: UIApplication) {
     seruStack.persist()
   }
-  
+
   func applicationWillTerminate(application: UIApplication) {
     seruStack.persist()
   }

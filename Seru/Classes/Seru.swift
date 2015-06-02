@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Sweet
 
 protocol StorageAtions {
 
@@ -25,12 +26,12 @@ public class Seru {
     self.stack = stack
     errorHandler = ErrorHandler()
   }
-  
+
   public convenience init(name:String = AppInfo.productName, bundle: NSBundle = NSBundle.mainBundle(), type: StoreType = .SQLite, location: StoreLocation = .PrivateFolder) {
     self.init(stack: BaseStack(name: name, bundle: bundle, type: type, location: location))
   }
-  
-//MARK: - Functionalioty 
+
+//MARK: - Functionalioty
 
   public func persist() {
     return persist(stack.mainMOC)
@@ -39,18 +40,18 @@ public class Seru {
   public func persist(moc: NSManagedObjectContext) {
     saveContext(moc)
   }
-  
+
 //MARK: - Perform
 
   public func performInBackgroundContext(block: (context: NSManagedObjectContext) -> Void) {
     let context = Seru.backgroundContext(parent: stack.mainMOC)
     performWorkInContext(context, block: block)
     }
-  
+
   public func performInMainContext(block: (context: NSManagedObjectContext) -> Void) {
     performWorkInContext(stack.mainMOC, block: block)
   }
-  
+
   func performWorkInContext(context: NSManagedObjectContext, block: (context: NSManagedObjectContext) -> Void) {
     context.performBlock {
       block(context: context)
@@ -60,14 +61,14 @@ public class Seru {
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void) {
     self.performBackgroundSave(block, completion: nil)
   }
-  
+
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? = nil) {
-    
+
     let context = Seru.backgroundContext(parent: stack.mainMOC)
     context.performBlock {
       block(context: context)
       self.saveContext(context, completion: {result in
-        
+
         if let parentContex = context.parentContext {
           self.saveContextsChain(parentContex, completion: completion);
         } else {
@@ -76,7 +77,7 @@ public class Seru {
       });
     }
   }
-  
+
 //MARKL:- Context
   public class func backgroundContext(parent: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
     var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
@@ -84,15 +85,15 @@ public class Seru {
     context.parentContext = parent
     return context
   }
-  
+
 //MARK: - Private
-  
+
   //MARK: - Save
   public func saveContext(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
-  
+
     var error: NSError?
     var result: Bool = true
-    
+
     if moc.hasChanges && !moc.save(&error) {
       self.errorHandler.handle(error!)
       result = false

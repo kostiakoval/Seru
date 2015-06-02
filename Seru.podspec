@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "Seru/Classes/**/*.{swift}"
   s.requires_arc = true
+  s.dependency 'Sweet'
   #s.ios.vendored_frameworks = 'Carthage/Build/iOS/Sweet.framework'
   #s.preserve_paths = 'Carthage/Build/iOS/Sweet.framework'
 

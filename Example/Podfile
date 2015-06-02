@@ -4,12 +4,12 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
-#pod "Seru", '~> 0.0.4'
-#pod "Seru", :git => "https://github.com/kostiakoval/Seru.git", :branch => "feature/project_structure" #:path => "../"
 pod "Seru", :path => "../"
+pod "Sweet", :git => "https://github.com/kostiakoval/Sweet"
 
 target 'SeruDemoTests' do
 
-  pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git', :branch => 'swift-1.1'
-  
+  pod 'Quick'
+  pod 'Nimble'
+
 end
