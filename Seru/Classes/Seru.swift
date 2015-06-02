@@ -19,7 +19,7 @@ protocol StorageAtions {
 }
 
 public class Seru {
-  let stack: CoreDataStack
+  public let stack: CoreDataStack
   let errorHandler: ErrorHandling
 
   public init (stack: CoreDataStack) {
