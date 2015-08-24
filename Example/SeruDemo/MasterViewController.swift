@@ -28,10 +28,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     seruStack.performInMainContext { context in
       let fetch = NSFetchRequest(entityName: "Entity")
-      var error: NSError?
-      if let result = context.executeFetchRequest(fetch, error: &error) as? [NSManagedObject] {
-        self.objects = result
-        self.tableView.reloadData()
+      do {
+        if let result = try context.executeFetchRequest(fetch) as? [NSManagedObject] {
+          self.objects = result
+          self.tableView.reloadData()
+        }
+      }
+      catch {
+        print("Error \(error)")
       }
     }
   }
@@ -39,7 +43,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   func insertNewObject(sender: AnyObject) {
 
     seruStack.performBackgroundSave({ context in
-      var object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! NSManagedObject
+      let object = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) 
       object.setValue(NSDate(), forKey: "time")
 
       },completion: { completed in
@@ -54,7 +58,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
     configureCell(cell, atIndexPath: indexPath)
     return cell
   }
@@ -85,7 +89,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
-      if let indexPath = self.tableView.indexPathForSelectedRow() {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
         let object = objects[indexPath.row].valueForKey("time") as! NSDate
         (segue.destinationViewController as! DetailViewController).detailItem = object
       }

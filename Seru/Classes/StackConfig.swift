@@ -43,7 +43,7 @@ public enum StoreLocation {
 }
 
 
-func storeUrl(name: String, #type: StoreType, #location: StoreLocation) -> NSURL? {
+func storeUrl(name: String, type: StoreType, location: StoreLocation) -> NSURL? {
 
   switch (type, location) {
 

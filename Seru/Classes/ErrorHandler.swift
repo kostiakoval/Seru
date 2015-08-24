@@ -28,7 +28,7 @@ public struct ErrorHandler : ErrorHandling  {
   }
   
   private func handleError(error: String) {
-    println(error)
+    print(error)
     abort()
   }
 }

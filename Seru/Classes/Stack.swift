@@ -48,7 +48,11 @@ public class BaseStack: CoreDataStack {
 
     let options = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption:true]
     var error: NSError?
-    coordinator.addPersistentStoreWithType(type.coreDataType, configuration: configuration, URL: URL, options: options, error: &error)
+    do {
+      try coordinator.addPersistentStoreWithType(type.coreDataType, configuration: configuration, URL: URL, options: options)
+    } catch let error1 as NSError {
+      error = error1
+    }
     return error
   }
 }

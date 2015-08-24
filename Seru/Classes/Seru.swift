@@ -44,7 +44,7 @@ public class Seru {
 //MARK: - Perform
 
   public func performInBackgroundContext(block: (context: NSManagedObjectContext) -> Void) {
-    let context = Seru.backgroundContext(parent: stack.mainMOC)
+    let context = Seru.backgroundContext(stack.mainMOC)
     performWorkInContext(context, block: block)
     }
 
@@ -59,12 +59,12 @@ public class Seru {
   }
 
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void) {
-    self.performBackgroundSave(block, completion: nil)
+    performBackgroundSave(block, completion: nil)
   }
 
   public func performBackgroundSave(block: (context: NSManagedObjectContext) -> Void, completion: (Bool -> Void)? = nil) {
 
-    let context = Seru.backgroundContext(parent: stack.mainMOC)
+    let context = Seru.backgroundContext(stack.mainMOC)
     context.performBlock {
       block(context: context)
       self.saveContext(context, completion: {result in
@@ -72,7 +72,7 @@ public class Seru {
         if let parentContex = context.parentContext {
           self.saveContextsChain(parentContex, completion: completion);
         } else {
-          call_if(completion, result)
+          call_if(completion, param: result)
         }
       });
     }
@@ -80,7 +80,7 @@ public class Seru {
 
 //MARKL:- Context
   public class func backgroundContext(parent: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
-    var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    let context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     context.name = "Background"
     context.parentContext = parent
     return context
@@ -91,14 +91,17 @@ public class Seru {
   //MARK: - Save
   public func saveContext(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
 
-    var error: NSError?
     var result: Bool = true
 
-    if moc.hasChanges && !moc.save(&error) {
-      self.errorHandler.handle(error!)
-      result = false
+    if moc.hasChanges {
+      do {
+        try moc.save()
+      } catch let error as NSError {
+        self.errorHandler.handle(error)
+        result = false
+      }
     }
-    main_queue_call_if(completion, result)
+    main_queue_call_if(completion, param: result)
   }
 
   func saveContextsChain(moc: NSManagedObjectContext, completion: (Bool -> Void)? = nil) {
@@ -108,7 +111,7 @@ public class Seru {
         if result && moc.parentContext != nil {
           self.saveContextsChain(moc.parentContext!, completion: completion)
         } else {
-          call_if(completion, result)
+          call_if(completion, param: result)
         }
       }
     }
