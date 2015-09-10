@@ -9,7 +9,7 @@ pod "Sweet", :git => "https://github.com/kostiakoval/Sweet", :branch => 'swift_2
 
 target 'SeruDemoTests' do
 
-  pod 'Quick', '~> 0.5.0'
-  pod 'Nimble', '2.0.0-rc.2'
+  pod 'Quick', '~> 0.6.0'
+  pod 'Nimble', '2.0.0-rc.3'
 
 end
