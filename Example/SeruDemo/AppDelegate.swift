@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let groupName = "my.group.com"
     if let containerURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(groupName) {
-        let sqliteFile = containerURL.URLByAppendingPathComponent("myDB.slqlite")
+        _ = containerURL.URLByAppendingPathComponent("myDB.slqlite")
     }
 
 
