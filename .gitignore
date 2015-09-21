@@ -32,5 +32,5 @@ DerivedData
 # `pod install` in .travis.yml
 #
 
-Pods/
+# Pods/
 
