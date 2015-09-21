@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "Seru"
-  s.version      = "0.0.4"
+  s.version      = "0.1.1"
   s.summary      = "Seru is Simple Core Data stack"
   s.description  = <<-DESC
                    Seru is Swift framework for working wit Core Data. It setup your core data stack and 
-                   gives you nica actions to work with it
+                   gives you nice actions to work with it
                    DESC
 
   s.homepage     = "https://github.com/kostiakoval/Seru"
@@ -19,7 +19,5 @@ Pod::Spec.new do |s|
   s.source_files  = "Seru/Classes/**/*.{swift}"
   s.requires_arc = true
   s.dependency 'Sweet'
-  #s.ios.vendored_frameworks = 'Carthage/Build/iOS/Sweet.framework'
-  #s.preserve_paths = 'Carthage/Build/iOS/Sweet.framework'
 
 end
