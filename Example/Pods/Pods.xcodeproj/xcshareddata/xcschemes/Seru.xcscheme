@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "144BD97B83E25A5033C48C8B"
+               BlueprintIdentifier = "2A02EA3B5FE768A05A989D3F"
                BuildableName = "Seru.framework"
                BlueprintName = "Seru"
                ReferencedContainer = "container:Pods.xcodeproj">

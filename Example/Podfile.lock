@@ -1,32 +1,24 @@
 PODS:
   - Nimble (2.0.0-rc.3)
   - Quick (0.6.0)
-  - Seru (0.0.4):
+  - Seru (0.1.1):
     - Sweet
-  - Sweet (0.1.0)
+  - Sweet (0.1.1)
 
 DEPENDENCIES:
   - Nimble (= 2.0.0-rc.3)
   - Quick (~> 0.6.0)
   - Seru (from `../`)
-  - Sweet (from `https://github.com/kostiakoval/Sweet`, branch `swift_2.0`)
+  - Sweet
 
 EXTERNAL SOURCES:
   Seru:
     :path: "../"
-  Sweet:
-    :branch: swift_2.0
-    :git: https://github.com/kostiakoval/Sweet
-
-CHECKOUT OPTIONS:
-  Sweet:
-    :commit: d17943f92800d1db74758eb2cae515619f97bee5
-    :git: https://github.com/kostiakoval/Sweet
 
 SPEC CHECKSUMS:
   Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
   Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
-  Seru: 42dd951e6977efcbdd05e8dc8085890328fbad70
-  Sweet: e1f27866cf68dc76b9eb8c9cd80035e288841957
+  Seru: ddb37f284302d35dbd877adef6c0a2cb9a15d98b
+  Sweet: 9e0c92c8588ccc5029907465ac949b1b11cb3b90
 
 COCOAPODS: 0.38.2
